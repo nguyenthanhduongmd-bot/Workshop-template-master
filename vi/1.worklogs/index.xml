@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tạo mới tài khoản AWS</title>
+    <link>https://nguyenthanhduongmd-bot.github.io/Workshop-template-master/vi/1.worklogs/</link>
+    <description>Recent content on Tạo mới tài khoản AWS</description>
+    <generator>Hugo -- gohugo.io</generator><atom:link href="https://nguyenthanhduongmd-bot.github.io/Workshop-template-master/vi/1.worklogs/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title></title>
+      <link>https://nguyenthanhduongmd-bot.github.io/Workshop-template-master/vi/1.worklogs/1.1-worklog-week-1/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://nguyenthanhduongmd-bot.github.io/Workshop-template-master/vi/1.worklogs/1.1-worklog-week-1/</guid>
+      <description>Worklog Tuần 1: Làm quen với AWS và các dịch vụ cơ bản Mục tiêu của tuần Khởi tạo và thiết lập tài khoản AWS an toàn. Làm quen với giao diện AWS Management Console và các điều hướng cơ bản. Tìm hiểu tổng quan về điện toán đám mây và các dịch vụ cốt lõi của AWS. Thiết lập các biện pháp bảo mật cơ bản và quản lý chi phí.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://nguyenthanhduongmd-bot.github.io/Workshop-template-master/vi/1.worklogs/1.2-worklog-week-2/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://nguyenthanhduongmd-bot.github.io/Workshop-template-master/vi/1.worklogs/1.2-worklog-week-2/</guid>
+      <description>Nghiên cứu chuyên sâu về Amazon EC2 và các cơ chế lưu trữ liên quan Mục tiêu của tuần Nắm vững kiến trúc, vòng đời (lifecycle) và các mô hình tính giá của Amazon EC2. Thực hành tự động hóa và triển khai các máy chủ ảo (Instances) trên môi trường đám mây. Cấu hình tường lửa ảo (Security Groups) và quản lý khóa truy cập (Key Pairs) an toàn. Đi sâu vào các loại lưu trữ khối (Block Storage) của AWS, đặc biệt là Amazon EBS và cơ chế sao lưu (Snapshots).</description>
+    </item>
+    
+  </channel>
+</rss>

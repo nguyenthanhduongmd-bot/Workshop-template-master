@@ -1,0 +1,2066 @@
+<!DOCTYPE html>
+<html lang="en" class="js csstransforms3d">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="Hugo 0.111.1">
+    <meta name="description" content="">
+<meta name="author" content="journeyoftheaverageguy@gmail.com">
+
+    <link rel="icon" href="/Workshop-template-master/images/favicon.png" type="image/png">
+
+    <title>5.2. Preparation :: Create a new AWS account.</title>
+
+    
+    <link href="/Workshop-template-master/css/nucleus.css?1795096901" rel="stylesheet">
+    <link href="/Workshop-template-master/css/fontawesome-all.min.css?1795096901" rel="stylesheet">
+    <link href="/Workshop-template-master/css/hybrid.css?1795096901" rel="stylesheet">
+    <link href="/Workshop-template-master/css/featherlight.min.css?1795096901" rel="stylesheet">
+    <link href="/Workshop-template-master/css/perfect-scrollbar.min.css?1795096901" rel="stylesheet">
+    <link href="/Workshop-template-master/css/auto-complete.css?1795096901" rel="stylesheet">
+    <link href="/Workshop-template-master/css/atom-one-dark-reasonable.css?1795096901" rel="stylesheet">
+    <link href="/Workshop-template-master/css/theme.css?1795096901" rel="stylesheet">
+    <link href="/Workshop-template-master/css/hugo-theme.css?1795096901" rel="stylesheet">
+    
+    <link href="/Workshop-template-master/css/theme-workshop.css?1795096901" rel="stylesheet">
+    
+    
+
+    <script src="/Workshop-template-master/js/jquery-3.3.1.min.js?1795096901"></script>
+
+    <style>
+      :root #header + #content > #left > #rlblock_left{
+          display:none !important;
+      }
+      
+    </style>
+    
+  </head>
+  <body class="" data-url="/Workshop-template-master/5.workshop/5.2-prerequisites/">
+    <nav id="sidebar" class="showVisitedLinks">
+
+
+
+  <div id="header-wrapper">
+    <div id="header">
+      <a id="logo" href="/">
+
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 30" width="30%"><defs><style>.cls-1{fill:#fff;}.cls-2{fill:#f90;fill-rule:evenodd;}</style></defs><title>AWS-Logo_White-Color</title><path class="cls-1" d="M14.09,10.85a4.7,4.7,0,0,0,.19,1.48,7.73,7.73,0,0,0,.54,1.19.77.77,0,0,1,.12.38.64.64,0,0,1-.32.49l-1,.7a.83.83,0,0,1-.44.15.69.69,0,0,1-.49-.23,3.8,3.8,0,0,1-.6-.77q-.25-.42-.51-1a6.14,6.14,0,0,1-4.89,2.3,4.54,4.54,0,0,1-3.32-1.19,4.27,4.27,0,0,1-1.22-3.2A4.28,4.28,0,0,1,3.61,7.75,6.06,6.06,0,0,1,7.69,6.46a12.47,12.47,0,0,1,1.76.13q.92.13,1.91.36V5.73a3.65,3.65,0,0,0-.79-2.66A3.81,3.81,0,0,0,7.86,2.3a7.71,7.71,0,0,0-1.79.22,12.78,12.78,0,0,0-1.79.57,4.55,4.55,0,0,1-.58.22l-.26,0q-.35,0-.35-.52V2a1.09,1.09,0,0,1,.12-.58,1.2,1.2,0,0,1,.47-.35A10.88,10.88,0,0,1,5.77.32,10.19,10.19,0,0,1,8.36,0a6,6,0,0,1,4.35,1.35,5.49,5.49,0,0,1,1.38,4.09ZM7.34,13.38a5.36,5.36,0,0,0,1.72-.31A3.63,3.63,0,0,0,10.63,12,2.62,2.62,0,0,0,11.19,11a5.63,5.63,0,0,0,.16-1.44v-.7a14.35,14.35,0,0,0-1.53-.28,12.37,12.37,0,0,0-1.56-.1,3.84,3.84,0,0,0-2.47.67A2.34,2.34,0,0,0,5,11a2.35,2.35,0,0,0,.61,1.76A2.4,2.4,0,0,0,7.34,13.38Zm13.35,1.8a1,1,0,0,1-.64-.16,1.3,1.3,0,0,1-.35-.65L15.81,1.51a3,3,0,0,1-.15-.67.36.36,0,0,1,.41-.41H17.7a1,1,0,0,1,.65.16,1.4,1.4,0,0,1,.33.65l2.79,11,2.59-11A1.17,1.17,0,0,1,24.39.6a1.1,1.1,0,0,1,.67-.16H26.4a1.1,1.1,0,0,1,.67.16,1.17,1.17,0,0,1,.32.65L30,12.39,32.88,1.25A1.39,1.39,0,0,1,33.22.6a1,1,0,0,1,.65-.16h1.54a.36.36,0,0,1,.41.41,1.36,1.36,0,0,1,0,.26,3.64,3.64,0,0,1-.12.41l-4,12.86a1.3,1.3,0,0,1-.35.65,1,1,0,0,1-.64.16H29.25a1,1,0,0,1-.67-.17,1.26,1.26,0,0,1-.32-.67L25.67,3.64,23.11,14.34a1.26,1.26,0,0,1-.32.67,1,1,0,0,1-.67.17Zm21.36.44a11.28,11.28,0,0,1-2.56-.29,7.44,7.44,0,0,1-1.92-.67,1,1,0,0,1-.61-.93v-.84q0-.52.38-.52a.9.9,0,0,1,.31.06l.42.17a8.77,8.77,0,0,0,1.83.58,9.78,9.78,0,0,0,2,.2,4.48,4.48,0,0,0,2.43-.55,1.76,1.76,0,0,0,.86-1.57,1.61,1.61,0,0,0-.45-1.16A4.29,4.29,0,0,0,43,9.22l-2.41-.76A5.15,5.15,0,0,1,38,6.78a3.94,3.94,0,0,1-.83-2.41,3.7,3.7,0,0,1,.45-1.85,4.47,4.47,0,0,1,1.19-1.37A5.27,5.27,0,0,1,40.51.29,7.4,7.4,0,0,1,42.6,0a8.87,8.87,0,0,1,1.12.07q.57.07,1.08.19t.95.26a4.27,4.27,0,0,1,.7.29,1.59,1.59,0,0,1,.49.41.94.94,0,0,1,.15.55v.79q0,.52-.38.52a1.76,1.76,0,0,1-.64-.2,7.74,7.74,0,0,0-3.2-.64,4.37,4.37,0,0,0-2.21.47,1.6,1.6,0,0,0-.79,1.48,1.58,1.58,0,0,0,.49,1.18,4.94,4.94,0,0,0,1.83.92L44.55,7a5.08,5.08,0,0,1,2.57,1.6A3.76,3.76,0,0,1,47.9,11a4.21,4.21,0,0,1-.44,1.93,4.4,4.4,0,0,1-1.21,1.47,5.43,5.43,0,0,1-1.85.93A8.25,8.25,0,0,1,42.05,15.62Z"></path><path class="cls-2" d="M45.19,23.81C39.72,27.85,31.78,30,25,30A36.64,36.64,0,0,1,.22,20.57c-.51-.46-.06-1.09.56-.74A49.78,49.78,0,0,0,25.53,26.4,49.23,49.23,0,0,0,44.4,22.53C45.32,22.14,46.1,23.14,45.19,23.81Z"></path><path class="cls-2" d="M47.47,21.21c-.7-.9-4.63-.42-6.39-.21-.53.06-.62-.4-.14-.74,3.13-2.2,8.27-1.57,8.86-.83s-.16,5.89-3.09,8.35c-.45.38-.88.18-.68-.32C46.69,25.8,48.17,22.11,47.47,21.21Z"></path></svg>
+
+</a>
+
+    </div>
+    
+        <div class="searchbox">
+    <label for="search-by"><i class="fas fa-search"></i></label>
+    <input data-search-input id="search-by" type="search" placeholder="Search...">
+    <span data-search-clear=""><i class="fas fa-times"></i></span>
+</div>
+
+<script type="text/javascript" src="/Workshop-template-master/js/lunr.min.js?1795096901"></script>
+<script type="text/javascript" src="/Workshop-template-master/js/auto-complete.js?1795096901"></script>
+<script type="text/javascript">
+    
+        var baseurl = "https:\/\/nguyenthanhduongmd-bot.github.io\/Workshop-template-master\/";
+    
+</script>
+<script type="text/javascript" src="/Workshop-template-master/js/search.js?1795096901"></script>
+
+    
+  </div>
+
+    <div class="highlightable">
+    <ul class="topics">
+
+        
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/Workshop-template-master/1.worklogs/" title="" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/Workshop-template-master/1.worklogs/">
+           <b> 1.Worklog</b> 
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/Workshop-template-master/1.worklogs/1.1-worklog-week-1/" title="Getting Familiar with AWS and Basic Services" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/Workshop-template-master/1.worklogs/1.1-worklog-week-1/">
+           <b> 1.1 Worklog week 1 </b> Getting Familiar with AWS and Basic Services
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/Workshop-template-master/1.worklogs/1.2-worklog-week-2/" title="" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/Workshop-template-master/1.worklogs/1.2-worklog-week-2/">
+           <b> 1.2 Worklog week 2 </b> 
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/Workshop-template-master/1.worklogs/1.3-worklog-week-3/" title="" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/Workshop-template-master/1.worklogs/1.3-worklog-week-3/">
+           <b> 1.3 Worklog week 3</b> 
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/Workshop-template-master/1.worklogs/1.4-worklog-week-4/" title="" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/Workshop-template-master/1.worklogs/1.4-worklog-week-4/">
+           <b> 1.4 Worklog week 4 </b> 
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/Workshop-template-master/1.worklogs/1.5-worklog-week-5/" title="" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/Workshop-template-master/1.worklogs/1.5-worklog-week-5/">
+           <b> 1.5 Worklog week 5 </b> 
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/Workshop-template-master/1.worklogs/1.6-worklog-week-6/" title="" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/Workshop-template-master/1.worklogs/1.6-worklog-week-6/">
+           <b> 1.6 Worklog week 6 </b> 
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/Workshop-template-master/1.worklogs/1.7-worklog-week-7/" title="" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/Workshop-template-master/1.worklogs/1.7-worklog-week-7/">
+           <b> 1.7 Worklog week 7 </b> 
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/Workshop-template-master/1.worklogs/1.8-worklog-week-8/" title="" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/Workshop-template-master/1.worklogs/1.8-worklog-week-8/">
+           <b> 1.8 Worklog week 8 </b> 
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/Workshop-template-master/1.worklogs/1.9-worklog-week-9/" title="" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/Workshop-template-master/1.worklogs/1.9-worklog-week-9/">
+           <b> 1.9 Worklog week 9 </b> 
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/Workshop-template-master/1.worklogs/1.10-worklog-week-10/" title="" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/Workshop-template-master/1.worklogs/1.10-worklog-week-10/">
+           <b> 1.10 Worklog week 10 </b> 
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/Workshop-template-master/1.worklogs/1.11-worklog-week-11/" title="" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/Workshop-template-master/1.worklogs/1.11-worklog-week-11/">
+           <b> 1.11 Worklog week 11 </b> 
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/Workshop-template-master/1.worklogs/1.12-worklog-week-12/" title="" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/Workshop-template-master/1.worklogs/1.12-worklog-week-12/">
+           <b> 1.12 Worklog week 12 </b> 
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/Workshop-template-master/2.proposal/" title="" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/Workshop-template-master/2.proposal/">
+           <b> 2.Proposal</b> 
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/Workshop-template-master/3.blogs-posted/" title="" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/Workshop-template-master/3.blogs-posted/">
+           <b> 3. Blogs posted </b> 
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/Workshop-template-master/4.meetup-events-attended/" title="Account Authentication Support" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/Workshop-template-master/4.meetup-events-attended/">
+           <b> 4. </b> Account Authentication Support
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/Workshop-template-master/5.workshop/" title="" class="dd-item 
+        parent
+        
+        
+        ">
+      <a href="/Workshop-template-master/5.workshop/">
+          <b>5. Workshop </b>
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/Workshop-template-master/5.workshop/5.1-overview/" title="Overview" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/Workshop-template-master/5.workshop/5.1-overview/">
+          <b>5.1. </b>Overview
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/Workshop-template-master/5.workshop/5.2-prerequisites/" title="5.2. Preparation" class="dd-item 
+        
+        active
+        
+        ">
+      <a href="/Workshop-template-master/5.workshop/5.2-prerequisites/">
+          <b>5.2. </b>5.2. Preparation
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/Workshop-template-master/5.workshop/5.3-infrastructure-automation/" title="Network and EC2 Deployment" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/Workshop-template-master/5.workshop/5.3-infrastructure-automation/">
+          <b>5.3. </b>Network and EC2 Deployment
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/Workshop-template-master/5.workshop/5.4-deployment/" title="Monitoring Setup" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/Workshop-template-master/5.workshop/5.4-deployment/">
+          <b>5.4. </b>Monitoring Setup
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/Workshop-template-master/5.workshop/5.5-system-testing/" title="Testing and Validating the Monitoring System" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/Workshop-template-master/5.workshop/5.5-system-testing/">
+          <b>5.5. </b>Testing and Validating the Monitoring System
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/Workshop-template-master/5.workshop/5.6-dashboards-and-data-analysis/" title="Dashboard and Network Log Analysis" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/Workshop-template-master/5.workshop/5.6-dashboards-and-data-analysis/">
+          <b>5.6. </b>Dashboard and Network Log Analysis
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/Workshop-template-master/5.workshop/5.7-troubleshooting/" title="Troubleshooting the Monitoring System" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/Workshop-template-master/5.workshop/5.7-troubleshooting/">
+          <b>5.7. </b>Troubleshooting the Monitoring System
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/Workshop-template-master/5.workshop/5.8-evaluation-and-evidence/" title="Workshop Results Evaluation" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/Workshop-template-master/5.workshop/5.8-evaluation-and-evidence/">
+          <b>5.8. </b>Workshop Results Evaluation
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/Workshop-template-master/5.workshop/5.9-resource-cleanup/" title="Resource Cleanup" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/Workshop-template-master/5.workshop/5.9-resource-cleanup/">
+          <b>5.9. </b>Resource Cleanup
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/Workshop-template-master/6.-self-evaluation/" title="Self-Evaluation" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/Workshop-template-master/6.-self-evaluation/">
+          <b>6. </b>Self-Evaluation
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/Workshop-template-master/7.-sharing-and-feedback/" title="Sharing and Feedback" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/Workshop-template-master/7.-sharing-and-feedback/">
+          <b>7. </b>Sharing and Feedback
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+         
+    </ul>
+
+    
+    
+      <section id="shortcuts">
+        <h3>More</h3>
+        <ul>
+          
+              <li> 
+                  <a class="padding" href="https://aws.amazon.com/blogs"><i class='fab fa-aws'></i> AWS Study Group - Blog</a>
+              </li>
+          
+              <li> 
+                  <a class="padding" href="https://www.facebook.com/groups/awsstudygroupfcj"><i class='fab fa-facebook'></i> AWS Study Group - FB Group</a>
+              </li>
+          
+        </ul>
+      </section>
+    
+
+    
+    <section id="prefooter">
+      <hr/>
+      <ul>
+      
+        <li>
+          <a class="padding">
+            <i class="fas fa-language fa-fw"></i>
+          <div class="select-style">
+            <select id="select-language" onchange="location = this.value;">
+          
+          
+          
+              
+              
+                  
+                    
+                    
+                      <option id="en" value="https://nguyenthanhduongmd-bot.github.io/Workshop-template-master/5.workshop/5.2-prerequisites/" selected>English</option>
+                    
+                  
+              
+                  
+              
+          
+              
+              
+                  
+              
+                  
+                    
+                    
+                      <option id="vi" value="https://nguyenthanhduongmd-bot.github.io/Workshop-template-master/vi/5.workshop/5.2-prerequisites/">Tiếng Việt</option>
+                    
+                  
+              
+          
+        </select>
+        <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+          width="255px" height="255px" viewBox="0 0 255 255" style="enable-background:new 0 0 255 255;" xml:space="preserve">
+          <g>
+            <g id="arrow-drop-down">
+              <polygon points="0,63.75 127.5,191.25 255,63.75 		" />
+            </g>
+          </g>
+        </svg>
+        </div>
+        </a>
+        </li>
+      
+      
+      
+        <li><a class="padding" href="#" data-clear-history-toggle=""><i class="fas fa-history fa-fw"></i> Clear History</a></li>
+      
+      </ul>
+    </section>
+    
+    <section id="footer">
+      <left>
+    
+     <b> Workshop</b> <br>
+    <img src="https://hitwebcounter.com/counter/counter.php?page=7830891&style=0038&nbdigits=9&type=page&initCount=0" title="Migrate" Alt="web counter"   border="0" /></a>  <br>
+     <b> <a href="https://cloudjourney.awsstudygroup.com/">Cloud Journey</a></b> <br>
+    <img src="https://hitwebcounter.com/counter/counter.php?page=7830807&style=0038&nbdigits=9&type=page&initCount=0" title="Total CLoud Journey" Alt="web counter"   border="0"   />
+     
+</left>
+<left>
+    <br>
+    <br>
+        <b> Last Updated </b> <br>
+        <i><font color=orange>26-11-2023</font></i>
+    </left>
+    <left>
+        <br>
+        <br>
+            <b> Team </b> <br>
+           
+            <i>
+                <a href="https://www.linkedin.com/in/jotaguy"  style="color:orange">Gia Hưng</a>
+        </i>
+        </left>
+
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+
+    </section>
+  </div>
+</nav>
+
+
+
+
+        <section id="body">
+        <div id="overlay"></div>
+        <div class="padding highlightable">
+              
+              <div>
+                <div id="top-bar">
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fas fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
+                  
+                  <span class="links">
+                 
+                 
+                    
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/Workshop-template-master/'></a> > <a href='/Workshop-template-master/5.workshop/'></a> > 5.2. Preparation
+          
+        
+          
+        
+          
+        
+                 
+                  </span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#introduction">Introduction</a>
+      <ul>
+        <li><a href="#objectives">Objectives</a></li>
+      </ul>
+    </li>
+    <li><a href="#521-prepare-an-aws-account">5.2.1. Prepare an AWS Account</a>
+      <ul>
+        <li><a href="#step-1-access-the-aws-website">Step 1: Access the AWS Website</a></li>
+        <li><a href="#step-2-create-an-aws-account">Step 2: Create an AWS Account</a></li>
+        <li><a href="#step-3-sign-in-to-aws-management-console">Step 3: Sign In to AWS Management Console</a></li>
+      </ul>
+    </li>
+    <li><a href="#522-select-the-aws-region">5.2.2. Select the AWS Region</a>
+      <ul>
+        <li><a href="#step-1-understand-aws-regions">Step 1: Understand AWS Regions</a></li>
+        <li><a href="#step-2-change-the-aws-region">Step 2: Change the AWS Region</a></li>
+      </ul>
+    </li>
+    <li><a href="#523-understand-the-aws-services">5.2.3. Understand the AWS Services</a></li>
+    <li><a href="#524-check-aws-iam-permissions">5.2.4. Check AWS IAM Permissions</a>
+      <ul>
+        <li><a href="#step-1-open-the-iam-console">Step 1: Open the IAM Console</a></li>
+        <li><a href="#step-2-check-iam-access">Step 2: Check IAM Access</a></li>
+      </ul>
+    </li>
+    <li><a href="#525-prepare-the-amazon-vpc-environment">5.2.5. Prepare the Amazon VPC Environment</a>
+      <ul>
+        <li><a href="#step-1-open-the-vpc-console">Step 1: Open the VPC Console</a></li>
+        <li><a href="#step-2-explore-vpc-components">Step 2: Explore VPC Components</a></li>
+      </ul>
+    </li>
+    <li><a href="#526-prepare-the-amazon-ec2-environment">5.2.6. Prepare the Amazon EC2 Environment</a>
+      <ul>
+        <li><a href="#step-1-open-the-ec2-console">Step 1: Open the EC2 Console</a></li>
+        <li><a href="#step-2-check-the-ec2-deployment-environment">Step 2: Check the EC2 Deployment Environment</a></li>
+      </ul>
+    </li>
+    <li><a href="#527-prepare-amazon-cloudwatch">5.2.7. Prepare Amazon CloudWatch</a>
+      <ul>
+        <li><a href="#step-1-open-amazon-cloudwatch">Step 1: Open Amazon CloudWatch</a></li>
+        <li><a href="#step-2-explore-monitoring-features">Step 2: Explore Monitoring Features</a></li>
+      </ul>
+    </li>
+    <li><a href="#528-prepare-amazon-sns">5.2.8. Prepare Amazon SNS</a>
+      <ul>
+        <li><a href="#step-1-open-the-amazon-sns-console">Step 1: Open the Amazon SNS Console</a></li>
+        <li><a href="#step-2-understand-sns-components">Step 2: Understand SNS Components</a></li>
+      </ul>
+    </li>
+    <li><a href="#529-configure-aws-budgets">5.2.9. Configure AWS Budgets</a>
+      <ul>
+        <li><a href="#step-1-open-aws-billing">Step 1: Open AWS Billing</a></li>
+        <li><a href="#step-2-create-a-cost-budget">Step 2: Create a Cost Budget</a></li>
+      </ul>
+    </li>
+    <li><a href="#5210-verify-the-preparation-environment">5.2.10. Verify the Preparation Environment</a>
+      <ul>
+        <li><a href="#expected-results">Expected Results</a></li>
+      </ul>
+    </li>
+    <li><a href="#conclusion">Conclusion</a></li>
+  </ul>
+</nav>
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
+        <div id="head-tags">
+        
+        </div>
+        
+        <div id="body-inner">
+          
+            <h1>
+              
+              5.2. Preparation
+            </h1>
+          
+
+        
+
+
+
+	<h1 id="52-preparation">5.2. Preparation</h1>
+<h2 id="introduction">Introduction</h2>
+<p>Before deploying the Network Automation and Monitoring system on Amazon Web Services (AWS), we need to prepare the necessary environment, configure our AWS account, and become familiar with the AWS services used throughout this workshop.</p>
+<p>Proper preparation helps ensure that the deployment process runs smoothly, reduces configuration errors, and provides a consistent environment for network monitoring and automation.</p>
+<p>In this workshop, we will use the <strong>AWS Management Console</strong> to configure and manage AWS resources. The main services include Amazon VPC, Amazon EC2, AWS Identity and Access Management (IAM), Amazon CloudWatch, VPC Flow Logs, and Amazon Simple Notification Service (SNS).</p>
+<h3 id="objectives">Objectives</h3>
+<p>After completing this section, you will be able to:</p>
+<ul>
+<li>Access and navigate the AWS Management Console.</li>
+<li>Select the appropriate AWS Region.</li>
+<li>Understand the main AWS services used in this workshop.</li>
+<li>Check IAM permissions and security settings.</li>
+<li>Prepare the environment for VPC and EC2 deployment.</li>
+<li>Access Amazon CloudWatch and Amazon SNS.</li>
+<li>Configure AWS Budgets to monitor estimated costs.</li>
+</ul>
+<hr>
+<h2 id="521-prepare-an-aws-account">5.2.1. Prepare an AWS Account</h2>
+<h3 id="step-1-access-the-aws-website">Step 1: Access the AWS Website</h3>
+<p>First, open your web browser and visit the official AWS website:</p>
+<p><strong>AWS Website:</strong> <a href="https://aws.amazon.com/">https://aws.amazon.com/</a></p>
+<p>If you do not have an AWS account, click <strong>Create an AWS Account</strong> to begin the registration process.</p>
+<p>If you already have an account, select <strong>Sign In to the Console</strong>.</p>
+<p><img src="/images/5-workshop/5.2/aws-home.png" alt="AWS Homepage"></p>
+<p><em>Figure 5.2.1. AWS official website.</em></p>
+<h3 id="step-2-create-an-aws-account">Step 2: Create an AWS Account</h3>
+<p>To create an AWS account, follow these steps:</p>
+<ol>
+<li>Click <strong>Create an AWS Account</strong>.</li>
+<li>Enter your email address.</li>
+<li>Provide a name for your AWS account.</li>
+<li>Complete the account verification process.</li>
+<li>Enter the required contact information.</li>
+<li>Provide a valid payment method if requested.</li>
+<li>Complete identity verification.</li>
+<li>Select an available support plan and finish registration.</li>
+</ol>
+<p>AWS offers free usage allowances or credits for eligible accounts. However, not all AWS services are free, and usage beyond applicable limits may incur charges.</p>
+<p><img src="/images/5-workshop/5.2/aws-register.png" alt="AWS Account Registration"></p>
+<p><em>Figure 5.2.2. AWS account registration interface.</em></p>
+<h3 id="step-3-sign-in-to-aws-management-console">Step 3: Sign In to AWS Management Console</h3>
+<p>After successfully creating your account:</p>
+<ol>
+<li>Open <a href="https://console.aws.amazon.com/">https://console.aws.amazon.com/</a>.</li>
+<li>Select the appropriate sign-in method.</li>
+<li>Enter your account credentials.</li>
+<li>Complete multi-factor authentication if required.</li>
+<li>Access the AWS Management Console.</li>
+</ol>
+<p>The AWS Management Console provides a centralized interface for managing cloud resources, monitoring services, and configuring AWS infrastructure.</p>
+<p><img src="/images/5-workshop/5.2/aws-console.png" alt="AWS Management Console"></p>
+<p><em>Figure 5.2.3. AWS Management Console after signing in.</em></p>
+<hr>
+<h2 id="522-select-the-aws-region">5.2.2. Select the AWS Region</h2>
+<h3 id="step-1-understand-aws-regions">Step 1: Understand AWS Regions</h3>
+<p>An AWS Region is a geographical area where AWS operates cloud infrastructure.</p>
+<p>Each Region consists of multiple Availability Zones (AZs), which help improve application availability and fault tolerance.</p>
+<p>For this workshop, we will use the following Region:</p>
+<table>
+<thead>
+<tr>
+<th>Configuration</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Region Name</td>
+<td>Asia Pacific (Singapore)</td>
+</tr>
+<tr>
+<td>Region Code</td>
+<td>ap-southeast-1</td>
+</tr>
+<tr>
+<td>Deployment Platform</td>
+<td>AWS Management Console</td>
+</tr>
+</tbody>
+</table>
+<p>Using the same Region throughout the workshop helps simplify resource management and ensures that regional services can interact correctly.</p>
+<h3 id="step-2-change-the-aws-region">Step 2: Change the AWS Region</h3>
+<p>Follow these steps:</p>
+<ol>
+<li>Sign in to the AWS Management Console.</li>
+<li>Locate the Region selector in the upper-right corner.</li>
+<li>Click the currently selected Region.</li>
+<li>Find <strong>Asia Pacific (Singapore)</strong>.</li>
+<li>Select <strong>Asia Pacific (Singapore)</strong>.</li>
+<li>Verify that the Region is set to <strong>ap-southeast-1</strong>.</li>
+</ol>
+<p><img src="/images/8/1.png" alt="AWS Region Selection"></p>
+<p><em>Figure 5.2.4. Selecting the Asia Pacific (Singapore) Region.</em></p>
+<p><strong>Note:</strong> Regional resources such as VPC, EC2, CloudWatch, and SNS should be configured in the selected Region. IAM is a global AWS service.</p>
+<hr>
+<h2 id="523-understand-the-aws-services">5.2.3. Understand the AWS Services</h2>
+<p>Before deploying the system, we need to understand the primary services used in the network automation and monitoring architecture.</p>
+<table>
+<thead>
+<tr>
+<th>AWS Service</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Amazon VPC</td>
+<td>Creates an isolated virtual network</td>
+</tr>
+<tr>
+<td>Amazon EC2</td>
+<td>Provides virtual servers for testing</td>
+</tr>
+<tr>
+<td>AWS IAM</td>
+<td>Manages identities and permissions</td>
+</tr>
+<tr>
+<td>VPC Flow Logs</td>
+<td>Captures network traffic metadata</td>
+</tr>
+<tr>
+<td>Amazon CloudWatch</td>
+<td>Collects and analyzes logs and metrics</td>
+</tr>
+<tr>
+<td>Amazon SNS</td>
+<td>Sends monitoring notifications</td>
+</tr>
+<tr>
+<td>AWS Systems Manager</td>
+<td>Helps manage and access EC2 instances</td>
+</tr>
+<tr>
+<td>Elastic Load Balancing</td>
+<td>Distributes incoming application traffic</td>
+</tr>
+<tr>
+<td>EC2 Auto Scaling</td>
+<td>Automatically adjusts EC2 capacity</td>
+</tr>
+</tbody>
+</table>
+<p>These services work together to provide a cloud environment capable of collecting network logs, monitoring network activity, detecting specified events, and sending alerts.</p>
+<p>The detailed configuration of these services will be introduced in the following sections.</p>
+<hr>
+<h2 id="524-check-aws-iam-permissions">5.2.4. Check AWS IAM Permissions</h2>
+<p>AWS Identity and Access Management (IAM) is a service that allows administrators to securely control access to AWS resources.</p>
+<p>IAM helps determine which users, roles, and services are allowed to perform specific actions.</p>
+<h3 id="step-1-open-the-iam-console">Step 1: Open the IAM Console</h3>
+<ol>
+<li>Go to the AWS Management Console.</li>
+<li>Locate the search bar at the top of the page.</li>
+<li>Type <strong>IAM</strong>.</li>
+<li>Select <strong>IAM</strong> from the search results.</li>
+<li>Wait for the IAM Dashboard to appear.</li>
+</ol>
+<p><img src="/images/8/2.png" alt="AWS IAM Dashboard"></p>
+<p><em>Figure 5.2.5. AWS IAM Dashboard.</em></p>
+<h3 id="step-2-check-iam-access">Step 2: Check IAM Access</h3>
+<p>In the IAM Console, review the following sections:</p>
+<ul>
+<li><strong>Users:</strong> Manage IAM users.</li>
+<li><strong>User groups:</strong> Organize users into groups.</li>
+<li><strong>Roles:</strong> Define permissions that AWS services or identities can assume.</li>
+<li><strong>Policies:</strong> Define allowed and denied actions.</li>
+</ul>
+<p>For this workshop, the working identity needs appropriate permissions to manage:</p>
+<ul>
+<li>Amazon VPC and network resources.</li>
+<li>Amazon EC2 instances.</li>
+<li>IAM roles and policies required by the workshop.</li>
+<li>Amazon CloudWatch Logs and Alarms.</li>
+<li>VPC Flow Logs.</li>
+<li>Amazon SNS topics and subscriptions.</li>
+<li>AWS Systems Manager resources.</li>
+</ul>
+<p>Use the principle of <strong>least privilege</strong>, granting only the permissions necessary to complete the workshop.</p>
+<p>Avoid using the AWS root user for daily operations. Enable multi-factor authentication (MFA) to improve account security.</p>
+<p><img src="/images/8/3.png" alt="IAM Permissions"></p>
+<p><em>Figure 5.2.6. Checking IAM access and permissions.</em></p>
+<p><strong>Note:</strong> You do not need to create new IAM roles at this stage. Required service roles will be configured during the deployment and monitoring sections.</p>
+<hr>
+<h2 id="525-prepare-the-amazon-vpc-environment">5.2.5. Prepare the Amazon VPC Environment</h2>
+<p>Amazon Virtual Private Cloud (VPC) enables users to create an isolated virtual network within AWS.</p>
+<p>In this workshop, Amazon VPC will provide the network infrastructure for the EC2 instance and monitoring services.</p>
+<h3 id="step-1-open-the-vpc-console">Step 1: Open the VPC Console</h3>
+<ol>
+<li>Return to the AWS Management Console.</li>
+<li>Enter <strong>VPC</strong> in the search bar.</li>
+<li>Select the <strong>VPC</strong> service.</li>
+<li>Locate <strong>Your VPCs</strong> in the left navigation menu.</li>
+<li>Click <strong>Your VPCs</strong>.</li>
+</ol>
+<p>The console displays the VPCs currently available in the selected Region.</p>
+<p><img src="/images/8/4.png" alt="Amazon VPC Dashboard"></p>
+<p><em>Figure 5.2.7. Amazon VPC management interface.</em></p>
+<h3 id="step-2-explore-vpc-components">Step 2: Explore VPC Components</h3>
+<p>In the left navigation menu, locate the following components:</p>
+<p><strong>1. Your VPCs</strong></p>
+<p>Displays existing virtual private networks.</p>
+<p><strong>2. Subnets</strong></p>
+<p>Allows users to divide a VPC into smaller network segments.</p>
+<p><strong>3. Route Tables</strong></p>
+<p>Defines how network traffic is routed between subnets and other destinations.</p>
+<p><strong>4. Internet Gateways</strong></p>
+<p>Provides a connection between a VPC and the Internet when routing and access settings permit it.</p>
+<p><strong>5. Security Groups</strong></p>
+<p>Controls allowed inbound and outbound traffic for associated resources.</p>
+<p><strong>6. Flow Logs</strong></p>
+<p>Captures metadata about network traffic passing through network interfaces.</p>
+<p>At this stage, we only need to become familiar with these components.</p>
+<p>The actual VPC, subnet, route table, and security group configuration will be performed in <strong>Section 5.3: Network and EC2 Deployment</strong>.</p>
+<hr>
+<h2 id="526-prepare-the-amazon-ec2-environment">5.2.6. Prepare the Amazon EC2 Environment</h2>
+<p>Amazon Elastic Compute Cloud (EC2) provides scalable virtual computing resources in the AWS Cloud.</p>
+<p>In this workshop, an EC2 instance will serve as a test server for network connectivity and traffic monitoring.</p>
+<h3 id="step-1-open-the-ec2-console">Step 1: Open the EC2 Console</h3>
+<ol>
+<li>Return to the AWS Management Console.</li>
+<li>Search for <strong>EC2</strong>.</li>
+<li>Select the <strong>EC2</strong> service.</li>
+<li>In the left navigation menu, click <strong>Instances</strong>.</li>
+<li>Review the list of existing instances.</li>
+</ol>
+<p><img src="/images/8/5.png" alt="Amazon EC2 Dashboard"></p>
+<p><em>Figure 5.2.8. Amazon EC2 Instances interface.</em></p>
+<h3 id="step-2-check-the-ec2-deployment-environment">Step 2: Check the EC2 Deployment Environment</h3>
+<p>Before launching an instance, check the following information:</p>
+<ul>
+<li>The selected AWS Region.</li>
+<li>Available EC2 instance types.</li>
+<li>Available Amazon Machine Images (AMIs).</li>
+<li>Instance quotas and account eligibility.</li>
+<li>Permissions to launch EC2 instances.</li>
+<li>AWS Systems Manager access requirements.</li>
+</ul>
+<p>For this workshop, we plan to use an Amazon Linux instance to generate test traffic and verify network monitoring.</p>
+<p>The instance type will be selected based on the available resources and cost considerations.</p>
+<p><strong>Important:</strong> Do not launch an EC2 instance yet. The virtual network must be configured first.</p>
+<p>The EC2 instance will be created in Section 5.3.</p>
+<hr>
+<h2 id="527-prepare-amazon-cloudwatch">5.2.7. Prepare Amazon CloudWatch</h2>
+<p>Amazon CloudWatch is a monitoring and observability service that provides information about AWS resources, applications, and system performance.</p>
+<p>In this workshop, CloudWatch will be responsible for collecting, analyzing, and displaying network monitoring information.</p>
+<h3 id="step-1-open-amazon-cloudwatch">Step 1: Open Amazon CloudWatch</h3>
+<ol>
+<li>Sign in to the AWS Management Console.</li>
+<li>Search for <strong>CloudWatch</strong>.</li>
+<li>Select <strong>CloudWatch</strong>.</li>
+<li>Wait for the CloudWatch console to load.</li>
+<li>Explore the navigation menu.</li>
+</ol>
+<p><img src="/images/8/6.png" alt="Amazon CloudWatch Overview"></p>
+<p><em>Figure 5.2.9. Amazon CloudWatch overview.</em></p>
+<h3 id="step-2-explore-monitoring-features">Step 2: Explore Monitoring Features</h3>
+<p>The following features will be used throughout the workshop:</p>
+<p><strong>CloudWatch Logs</strong></p>
+<p>Stores and manages log data collected from AWS resources.</p>
+<p><strong>CloudWatch Metrics</strong></p>
+<p>Provides numerical measurements used to monitor system performance and events.</p>
+<p><strong>CloudWatch Alarms</strong></p>
+<p>Monitors metrics and changes alarm states when predefined conditions are met.</p>
+<p><strong>CloudWatch Dashboards</strong></p>
+<p>Displays monitoring information in a centralized visual interface.</p>
+<p>During deployment, VPC Flow Logs will be configured to send traffic metadata to CloudWatch Logs.</p>
+<p>We will then create metric filters and alarms to detect rejected network traffic.</p>
+<p>For example, the workshop will monitor rejected TCP traffic on port 8080.</p>
+<p>A metric filter can identify matching log events, while CloudWatch Alarms can monitor the resulting metric.</p>
+<p><strong>Note:</strong> No log groups or alarms need to be created in this preparation section.</p>
+<p>These configurations will be covered in <strong>Section 5.4: Monitoring Configuration</strong>.</p>
+<hr>
+<h2 id="528-prepare-amazon-sns">5.2.8. Prepare Amazon SNS</h2>
+<p>Amazon Simple Notification Service (SNS) is a managed messaging service that enables notifications to be sent to subscribed endpoints.</p>
+<p>In this workshop, Amazon SNS will be integrated with CloudWatch Alarms to deliver email notifications when monitoring conditions are triggered.</p>
+<h3 id="step-1-open-the-amazon-sns-console">Step 1: Open the Amazon SNS Console</h3>
+<ol>
+<li>Return to the AWS Management Console.</li>
+<li>Search for <strong>SNS</strong>.</li>
+<li>Select <strong>Simple Notification Service</strong>.</li>
+<li>Open the SNS console.</li>
+<li>Locate <strong>Topics</strong> and <strong>Subscriptions</strong> in the navigation menu.</li>
+</ol>
+<p><img src="/images/8/7.png" alt="Amazon SNS Console"></p>
+<p><em>Figure 5.2.10. Amazon SNS management interface.</em></p>
+<h3 id="step-2-understand-sns-components">Step 2: Understand SNS Components</h3>
+<p><strong>SNS Topic</strong></p>
+<p>A communication channel used to publish messages to subscribers.</p>
+<p><strong>SNS Subscription</strong></p>
+<p>Connects a subscriber, such as an email address, to an SNS topic.</p>
+<p>When the monitoring system detects an event that causes a CloudWatch Alarm to change state, the alarm can publish a notification to an SNS topic.</p>
+<p>Amazon SNS then sends the notification to confirmed subscribers.</p>
+<p>For this workshop, email will be used as the notification method.</p>
+<p>The SNS topic and email subscription will be configured in the monitoring workflow.</p>
+<hr>
+<h2 id="529-configure-aws-budgets">5.2.9. Configure AWS Budgets</h2>
+<p>Monitoring AWS costs is an important part of working with cloud infrastructure.</p>
+<p>Some AWS resources, including EC2 instances, CloudWatch Logs, load balancers, and network services, may generate charges depending on usage and account eligibility.</p>
+<p>AWS Budgets allows users to define spending thresholds and receive notifications when costs approach or exceed those thresholds.</p>
+<h3 id="step-1-open-aws-billing">Step 1: Open AWS Billing</h3>
+<ol>
+<li>Go to the AWS Management Console.</li>
+<li>Search for <strong>Billing and Cost Management</strong>.</li>
+<li>Open the Billing console.</li>
+<li>Locate <strong>Budgets</strong> in the navigation menu.</li>
+<li>Click <strong>Budgets</strong>.</li>
+</ol>
+<h3 id="step-2-create-a-cost-budget">Step 2: Create a Cost Budget</h3>
+<ol>
+<li>Click <strong>Create budget</strong>.</li>
+<li>Choose <strong>Cost budget</strong> or an appropriate cost-budget template.</li>
+<li>Select <strong>Monthly</strong> as the budget period.</li>
+<li>Enter a budget amount based on your requirements.</li>
+<li>Configure notification thresholds.</li>
+<li>Enter an email address for alerts.</li>
+<li>Review the budget configuration.</li>
+<li>Click <strong>Create budget</strong>.</li>
+</ol>
+<p>For example, you can set a monthly budget of 5 USD as an initial monitoring threshold.</p>
+<p>This amount is only an example and does not guarantee that the workshop will cost less than 5 USD.</p>
+<p><img src="/images/8/8.png" alt="AWS Budgets"></p>
+<p><em>Figure 5.2.11. Configuring AWS Budgets for cost monitoring.</em></p>
+<p><strong>Important:</strong> AWS Budgets does not automatically stop all running resources when a spending threshold is reached. Cost reporting and notifications may also be delayed.</p>
+<p>Always review resource pricing and delete unused resources after completing the workshop.</p>
+<hr>
+<h2 id="5210-verify-the-preparation-environment">5.2.10. Verify the Preparation Environment</h2>
+<p>After completing the previous steps, verify that the AWS environment is ready for deployment.</p>
+<table>
+<thead>
+<tr>
+<th>No.</th>
+<th>Component</th>
+<th>Expected Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>AWS Account</td>
+<td>Successfully signed in</td>
+</tr>
+<tr>
+<td>2</td>
+<td>AWS Region</td>
+<td>ap-southeast-1</td>
+</tr>
+<tr>
+<td>3</td>
+<td>AWS IAM</td>
+<td>Appropriate permissions available</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Amazon VPC</td>
+<td>Console accessible</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Amazon EC2</td>
+<td>Instance management accessible</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Amazon CloudWatch</td>
+<td>Monitoring console accessible</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Amazon SNS</td>
+<td>SNS console accessible</td>
+</tr>
+<tr>
+<td>8</td>
+<td>AWS Budgets</td>
+<td>Cost monitoring configured</td>
+</tr>
+</tbody>
+</table>
+<h3 id="expected-results">Expected Results</h3>
+<p>After completing this preparation section, you should have:</p>
+<ul>
+<li>Successfully accessed the AWS Management Console.</li>
+<li>Selected the Asia Pacific (Singapore) Region.</li>
+<li>Understood the main AWS services used in the workshop.</li>
+<li>Checked the necessary IAM permissions.</li>
+<li>Explored the VPC and EC2 management interfaces.</li>
+<li>Accessed CloudWatch and SNS.</li>
+<li>Configured cost monitoring through AWS Budgets.</li>
+<li>Prepared the AWS environment for network deployment.</li>
+</ul>
+<h2 id="conclusion">Conclusion</h2>
+<p>In this section, we completed the preparation steps required to build a network automation and monitoring system on AWS.</p>
+<p>We became familiar with the AWS Management Console, selected the deployment Region, reviewed the essential services, and checked the permissions and cost monitoring settings.</p>
+<p>These preparations provide the foundation for deploying a virtual network and configuring monitoring capabilities in the following sections.</p>
+<p>In the next section, <strong>5.3. Network and EC2 Deployment</strong>, we will create and configure the core network infrastructure, including:</p>
+<ul>
+<li>Amazon VPC</li>
+<li>Public Subnet</li>
+<li>Internet Gateway</li>
+<li>Route Table</li>
+<li>Security Group</li>
+<li>Amazon EC2 Instance</li>
+</ul>
+<p>After deploying these resources, we will test network connectivity and prepare the infrastructure for VPC Flow Logs and CloudWatch monitoring.</p>
+
+
+
+
+
+<footer class=" footline" >
+	
+</footer>
+
+        
+        </div> 
+        
+
+      </div>
+
+    <div id="navigation">
+        
+        
+        
+        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+        
+        
+
+
+	 
+	 
+		
+			<a class="nav nav-prev" href="/Workshop-template-master/5.workshop/5.1-overview/" title="Overview"> <i class="fa fa-chevron-left"></i></a>
+		
+		
+			<a class="nav nav-next" href="/Workshop-template-master/5.workshop/5.3-infrastructure-automation/" title="Network and EC2 Deployment" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+	
+    </div>
+
+    </section>
+    
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="/Workshop-template-master/js/clipboard.min.js?1795096901"></script>
+    <script src="/Workshop-template-master/js/perfect-scrollbar.min.js?1795096901"></script>
+    <script src="/Workshop-template-master/js/perfect-scrollbar.jquery.min.js?1795096901"></script>
+    <script src="/Workshop-template-master/js/jquery.sticky.js?1795096901"></script>
+    <script src="/Workshop-template-master/js/featherlight.min.js?1795096901"></script>
+    <script src="/Workshop-template-master/js/highlight.pack.js?1795096901"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="/Workshop-template-master/js/modernizr.custom-3.6.0.js?1795096901"></script>
+    <script src="/Workshop-template-master/js/learn.js?1795096901"></script>
+    <script src="/Workshop-template-master/js/hugo-learn.js?1795096901"></script>
+
+    <link href="/Workshop-template-master/mermaid/mermaid.css?1795096901" rel="stylesheet" />
+    <script src="/Workshop-template-master/mermaid/mermaid.js?1795096901"></script>
+    <script>
+        mermaid.initialize({ startOnLoad: true });
+    </script>
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-158079754-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+  </body>
+</html>

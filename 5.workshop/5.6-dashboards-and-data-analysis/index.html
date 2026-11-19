@@ -1,0 +1,1924 @@
+<!DOCTYPE html>
+<html lang="en" class="js csstransforms3d">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="Hugo 0.111.1">
+    <meta name="description" content="">
+<meta name="author" content="journeyoftheaverageguy@gmail.com">
+
+    <link rel="icon" href="/Workshop-template-master/images/favicon.png" type="image/png">
+
+    <title>Dashboard and Network Log Analysis :: Create a new AWS account.</title>
+
+    
+    <link href="/Workshop-template-master/css/nucleus.css?1795096901" rel="stylesheet">
+    <link href="/Workshop-template-master/css/fontawesome-all.min.css?1795096901" rel="stylesheet">
+    <link href="/Workshop-template-master/css/hybrid.css?1795096901" rel="stylesheet">
+    <link href="/Workshop-template-master/css/featherlight.min.css?1795096901" rel="stylesheet">
+    <link href="/Workshop-template-master/css/perfect-scrollbar.min.css?1795096901" rel="stylesheet">
+    <link href="/Workshop-template-master/css/auto-complete.css?1795096901" rel="stylesheet">
+    <link href="/Workshop-template-master/css/atom-one-dark-reasonable.css?1795096901" rel="stylesheet">
+    <link href="/Workshop-template-master/css/theme.css?1795096901" rel="stylesheet">
+    <link href="/Workshop-template-master/css/hugo-theme.css?1795096901" rel="stylesheet">
+    
+    <link href="/Workshop-template-master/css/theme-workshop.css?1795096901" rel="stylesheet">
+    
+    
+
+    <script src="/Workshop-template-master/js/jquery-3.3.1.min.js?1795096901"></script>
+
+    <style>
+      :root #header + #content > #left > #rlblock_left{
+          display:none !important;
+      }
+      
+    </style>
+    
+  </head>
+  <body class="" data-url="/Workshop-template-master/5.workshop/5.6-dashboards-and-data-analysis/">
+    <nav id="sidebar" class="showVisitedLinks">
+
+
+
+  <div id="header-wrapper">
+    <div id="header">
+      <a id="logo" href="/">
+
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 30" width="30%"><defs><style>.cls-1{fill:#fff;}.cls-2{fill:#f90;fill-rule:evenodd;}</style></defs><title>AWS-Logo_White-Color</title><path class="cls-1" d="M14.09,10.85a4.7,4.7,0,0,0,.19,1.48,7.73,7.73,0,0,0,.54,1.19.77.77,0,0,1,.12.38.64.64,0,0,1-.32.49l-1,.7a.83.83,0,0,1-.44.15.69.69,0,0,1-.49-.23,3.8,3.8,0,0,1-.6-.77q-.25-.42-.51-1a6.14,6.14,0,0,1-4.89,2.3,4.54,4.54,0,0,1-3.32-1.19,4.27,4.27,0,0,1-1.22-3.2A4.28,4.28,0,0,1,3.61,7.75,6.06,6.06,0,0,1,7.69,6.46a12.47,12.47,0,0,1,1.76.13q.92.13,1.91.36V5.73a3.65,3.65,0,0,0-.79-2.66A3.81,3.81,0,0,0,7.86,2.3a7.71,7.71,0,0,0-1.79.22,12.78,12.78,0,0,0-1.79.57,4.55,4.55,0,0,1-.58.22l-.26,0q-.35,0-.35-.52V2a1.09,1.09,0,0,1,.12-.58,1.2,1.2,0,0,1,.47-.35A10.88,10.88,0,0,1,5.77.32,10.19,10.19,0,0,1,8.36,0a6,6,0,0,1,4.35,1.35,5.49,5.49,0,0,1,1.38,4.09ZM7.34,13.38a5.36,5.36,0,0,0,1.72-.31A3.63,3.63,0,0,0,10.63,12,2.62,2.62,0,0,0,11.19,11a5.63,5.63,0,0,0,.16-1.44v-.7a14.35,14.35,0,0,0-1.53-.28,12.37,12.37,0,0,0-1.56-.1,3.84,3.84,0,0,0-2.47.67A2.34,2.34,0,0,0,5,11a2.35,2.35,0,0,0,.61,1.76A2.4,2.4,0,0,0,7.34,13.38Zm13.35,1.8a1,1,0,0,1-.64-.16,1.3,1.3,0,0,1-.35-.65L15.81,1.51a3,3,0,0,1-.15-.67.36.36,0,0,1,.41-.41H17.7a1,1,0,0,1,.65.16,1.4,1.4,0,0,1,.33.65l2.79,11,2.59-11A1.17,1.17,0,0,1,24.39.6a1.1,1.1,0,0,1,.67-.16H26.4a1.1,1.1,0,0,1,.67.16,1.17,1.17,0,0,1,.32.65L30,12.39,32.88,1.25A1.39,1.39,0,0,1,33.22.6a1,1,0,0,1,.65-.16h1.54a.36.36,0,0,1,.41.41,1.36,1.36,0,0,1,0,.26,3.64,3.64,0,0,1-.12.41l-4,12.86a1.3,1.3,0,0,1-.35.65,1,1,0,0,1-.64.16H29.25a1,1,0,0,1-.67-.17,1.26,1.26,0,0,1-.32-.67L25.67,3.64,23.11,14.34a1.26,1.26,0,0,1-.32.67,1,1,0,0,1-.67.17Zm21.36.44a11.28,11.28,0,0,1-2.56-.29,7.44,7.44,0,0,1-1.92-.67,1,1,0,0,1-.61-.93v-.84q0-.52.38-.52a.9.9,0,0,1,.31.06l.42.17a8.77,8.77,0,0,0,1.83.58,9.78,9.78,0,0,0,2,.2,4.48,4.48,0,0,0,2.43-.55,1.76,1.76,0,0,0,.86-1.57,1.61,1.61,0,0,0-.45-1.16A4.29,4.29,0,0,0,43,9.22l-2.41-.76A5.15,5.15,0,0,1,38,6.78a3.94,3.94,0,0,1-.83-2.41,3.7,3.7,0,0,1,.45-1.85,4.47,4.47,0,0,1,1.19-1.37A5.27,5.27,0,0,1,40.51.29,7.4,7.4,0,0,1,42.6,0a8.87,8.87,0,0,1,1.12.07q.57.07,1.08.19t.95.26a4.27,4.27,0,0,1,.7.29,1.59,1.59,0,0,1,.49.41.94.94,0,0,1,.15.55v.79q0,.52-.38.52a1.76,1.76,0,0,1-.64-.2,7.74,7.74,0,0,0-3.2-.64,4.37,4.37,0,0,0-2.21.47,1.6,1.6,0,0,0-.79,1.48,1.58,1.58,0,0,0,.49,1.18,4.94,4.94,0,0,0,1.83.92L44.55,7a5.08,5.08,0,0,1,2.57,1.6A3.76,3.76,0,0,1,47.9,11a4.21,4.21,0,0,1-.44,1.93,4.4,4.4,0,0,1-1.21,1.47,5.43,5.43,0,0,1-1.85.93A8.25,8.25,0,0,1,42.05,15.62Z"></path><path class="cls-2" d="M45.19,23.81C39.72,27.85,31.78,30,25,30A36.64,36.64,0,0,1,.22,20.57c-.51-.46-.06-1.09.56-.74A49.78,49.78,0,0,0,25.53,26.4,49.23,49.23,0,0,0,44.4,22.53C45.32,22.14,46.1,23.14,45.19,23.81Z"></path><path class="cls-2" d="M47.47,21.21c-.7-.9-4.63-.42-6.39-.21-.53.06-.62-.4-.14-.74,3.13-2.2,8.27-1.57,8.86-.83s-.16,5.89-3.09,8.35c-.45.38-.88.18-.68-.32C46.69,25.8,48.17,22.11,47.47,21.21Z"></path></svg>
+
+</a>
+
+    </div>
+    
+        <div class="searchbox">
+    <label for="search-by"><i class="fas fa-search"></i></label>
+    <input data-search-input id="search-by" type="search" placeholder="Search...">
+    <span data-search-clear=""><i class="fas fa-times"></i></span>
+</div>
+
+<script type="text/javascript" src="/Workshop-template-master/js/lunr.min.js?1795096901"></script>
+<script type="text/javascript" src="/Workshop-template-master/js/auto-complete.js?1795096901"></script>
+<script type="text/javascript">
+    
+        var baseurl = "https:\/\/nguyenthanhduongmd-bot.github.io\/Workshop-template-master\/";
+    
+</script>
+<script type="text/javascript" src="/Workshop-template-master/js/search.js?1795096901"></script>
+
+    
+  </div>
+
+    <div class="highlightable">
+    <ul class="topics">
+
+        
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/Workshop-template-master/1.worklogs/" title="" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/Workshop-template-master/1.worklogs/">
+           <b> 1.Worklog</b> 
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/Workshop-template-master/1.worklogs/1.1-worklog-week-1/" title="Getting Familiar with AWS and Basic Services" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/Workshop-template-master/1.worklogs/1.1-worklog-week-1/">
+           <b> 1.1 Worklog week 1 </b> Getting Familiar with AWS and Basic Services
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/Workshop-template-master/1.worklogs/1.2-worklog-week-2/" title="" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/Workshop-template-master/1.worklogs/1.2-worklog-week-2/">
+           <b> 1.2 Worklog week 2 </b> 
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/Workshop-template-master/1.worklogs/1.3-worklog-week-3/" title="" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/Workshop-template-master/1.worklogs/1.3-worklog-week-3/">
+           <b> 1.3 Worklog week 3</b> 
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/Workshop-template-master/1.worklogs/1.4-worklog-week-4/" title="" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/Workshop-template-master/1.worklogs/1.4-worklog-week-4/">
+           <b> 1.4 Worklog week 4 </b> 
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/Workshop-template-master/1.worklogs/1.5-worklog-week-5/" title="" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/Workshop-template-master/1.worklogs/1.5-worklog-week-5/">
+           <b> 1.5 Worklog week 5 </b> 
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/Workshop-template-master/1.worklogs/1.6-worklog-week-6/" title="" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/Workshop-template-master/1.worklogs/1.6-worklog-week-6/">
+           <b> 1.6 Worklog week 6 </b> 
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/Workshop-template-master/1.worklogs/1.7-worklog-week-7/" title="" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/Workshop-template-master/1.worklogs/1.7-worklog-week-7/">
+           <b> 1.7 Worklog week 7 </b> 
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/Workshop-template-master/1.worklogs/1.8-worklog-week-8/" title="" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/Workshop-template-master/1.worklogs/1.8-worklog-week-8/">
+           <b> 1.8 Worklog week 8 </b> 
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/Workshop-template-master/1.worklogs/1.9-worklog-week-9/" title="" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/Workshop-template-master/1.worklogs/1.9-worklog-week-9/">
+           <b> 1.9 Worklog week 9 </b> 
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/Workshop-template-master/1.worklogs/1.10-worklog-week-10/" title="" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/Workshop-template-master/1.worklogs/1.10-worklog-week-10/">
+           <b> 1.10 Worklog week 10 </b> 
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/Workshop-template-master/1.worklogs/1.11-worklog-week-11/" title="" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/Workshop-template-master/1.worklogs/1.11-worklog-week-11/">
+           <b> 1.11 Worklog week 11 </b> 
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/Workshop-template-master/1.worklogs/1.12-worklog-week-12/" title="" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/Workshop-template-master/1.worklogs/1.12-worklog-week-12/">
+           <b> 1.12 Worklog week 12 </b> 
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/Workshop-template-master/2.proposal/" title="" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/Workshop-template-master/2.proposal/">
+           <b> 2.Proposal</b> 
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/Workshop-template-master/3.blogs-posted/" title="" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/Workshop-template-master/3.blogs-posted/">
+           <b> 3. Blogs posted </b> 
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/Workshop-template-master/4.meetup-events-attended/" title="Account Authentication Support" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/Workshop-template-master/4.meetup-events-attended/">
+           <b> 4. </b> Account Authentication Support
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/Workshop-template-master/5.workshop/" title="" class="dd-item 
+        parent
+        
+        
+        ">
+      <a href="/Workshop-template-master/5.workshop/">
+          <b>5. Workshop </b>
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/Workshop-template-master/5.workshop/5.1-overview/" title="Overview" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/Workshop-template-master/5.workshop/5.1-overview/">
+          <b>5.1. </b>Overview
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/Workshop-template-master/5.workshop/5.2-prerequisites/" title="5.2. Preparation" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/Workshop-template-master/5.workshop/5.2-prerequisites/">
+          <b>5.2. </b>5.2. Preparation
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/Workshop-template-master/5.workshop/5.3-infrastructure-automation/" title="Network and EC2 Deployment" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/Workshop-template-master/5.workshop/5.3-infrastructure-automation/">
+          <b>5.3. </b>Network and EC2 Deployment
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/Workshop-template-master/5.workshop/5.4-deployment/" title="Monitoring Setup" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/Workshop-template-master/5.workshop/5.4-deployment/">
+          <b>5.4. </b>Monitoring Setup
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/Workshop-template-master/5.workshop/5.5-system-testing/" title="Testing and Validating the Monitoring System" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/Workshop-template-master/5.workshop/5.5-system-testing/">
+          <b>5.5. </b>Testing and Validating the Monitoring System
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/Workshop-template-master/5.workshop/5.6-dashboards-and-data-analysis/" title="Dashboard and Network Log Analysis" class="dd-item 
+        
+        active
+        
+        ">
+      <a href="/Workshop-template-master/5.workshop/5.6-dashboards-and-data-analysis/">
+          <b>5.6. </b>Dashboard and Network Log Analysis
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/Workshop-template-master/5.workshop/5.7-troubleshooting/" title="Troubleshooting the Monitoring System" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/Workshop-template-master/5.workshop/5.7-troubleshooting/">
+          <b>5.7. </b>Troubleshooting the Monitoring System
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/Workshop-template-master/5.workshop/5.8-evaluation-and-evidence/" title="Workshop Results Evaluation" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/Workshop-template-master/5.workshop/5.8-evaluation-and-evidence/">
+          <b>5.8. </b>Workshop Results Evaluation
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/Workshop-template-master/5.workshop/5.9-resource-cleanup/" title="Resource Cleanup" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/Workshop-template-master/5.workshop/5.9-resource-cleanup/">
+          <b>5.9. </b>Resource Cleanup
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/Workshop-template-master/6.-self-evaluation/" title="Self-Evaluation" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/Workshop-template-master/6.-self-evaluation/">
+          <b>6. </b>Self-Evaluation
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/Workshop-template-master/7.-sharing-and-feedback/" title="Sharing and Feedback" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/Workshop-template-master/7.-sharing-and-feedback/">
+          <b>7. </b>Sharing and Feedback
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+         
+    </ul>
+
+    
+    
+      <section id="shortcuts">
+        <h3>More</h3>
+        <ul>
+          
+              <li> 
+                  <a class="padding" href="https://aws.amazon.com/blogs"><i class='fab fa-aws'></i> AWS Study Group - Blog</a>
+              </li>
+          
+              <li> 
+                  <a class="padding" href="https://www.facebook.com/groups/awsstudygroupfcj"><i class='fab fa-facebook'></i> AWS Study Group - FB Group</a>
+              </li>
+          
+        </ul>
+      </section>
+    
+
+    
+    <section id="prefooter">
+      <hr/>
+      <ul>
+      
+        <li>
+          <a class="padding">
+            <i class="fas fa-language fa-fw"></i>
+          <div class="select-style">
+            <select id="select-language" onchange="location = this.value;">
+          
+          
+          
+              
+              
+                  
+                    
+                    
+                      <option id="en" value="https://nguyenthanhduongmd-bot.github.io/Workshop-template-master/5.workshop/5.6-dashboards-and-data-analysis/" selected>English</option>
+                    
+                  
+              
+                  
+              
+          
+              
+              
+                  
+              
+                  
+                    
+                    
+                      <option id="vi" value="https://nguyenthanhduongmd-bot.github.io/Workshop-template-master/vi/5.workshop/5.6-dashboards-and-data-analysis/">Tiếng Việt</option>
+                    
+                  
+              
+          
+        </select>
+        <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+          width="255px" height="255px" viewBox="0 0 255 255" style="enable-background:new 0 0 255 255;" xml:space="preserve">
+          <g>
+            <g id="arrow-drop-down">
+              <polygon points="0,63.75 127.5,191.25 255,63.75 		" />
+            </g>
+          </g>
+        </svg>
+        </div>
+        </a>
+        </li>
+      
+      
+      
+        <li><a class="padding" href="#" data-clear-history-toggle=""><i class="fas fa-history fa-fw"></i> Clear History</a></li>
+      
+      </ul>
+    </section>
+    
+    <section id="footer">
+      <left>
+    
+     <b> Workshop</b> <br>
+    <img src="https://hitwebcounter.com/counter/counter.php?page=7830891&style=0038&nbdigits=9&type=page&initCount=0" title="Migrate" Alt="web counter"   border="0" /></a>  <br>
+     <b> <a href="https://cloudjourney.awsstudygroup.com/">Cloud Journey</a></b> <br>
+    <img src="https://hitwebcounter.com/counter/counter.php?page=7830807&style=0038&nbdigits=9&type=page&initCount=0" title="Total CLoud Journey" Alt="web counter"   border="0"   />
+     
+</left>
+<left>
+    <br>
+    <br>
+        <b> Last Updated </b> <br>
+        <i><font color=orange>26-11-2023</font></i>
+    </left>
+    <left>
+        <br>
+        <br>
+            <b> Team </b> <br>
+           
+            <i>
+                <a href="https://www.linkedin.com/in/jotaguy"  style="color:orange">Gia Hưng</a>
+        </i>
+        </left>
+
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+
+    </section>
+  </div>
+</nav>
+
+
+
+
+        <section id="body">
+        <div id="overlay"></div>
+        <div class="padding highlightable">
+              
+              <div>
+                <div id="top-bar">
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fas fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
+                  
+                  <span class="links">
+                 
+                 
+                    
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/Workshop-template-master/'></a> > <a href='/Workshop-template-master/5.workshop/'></a> > Dashboard and Network Log Analysis
+          
+        
+          
+        
+          
+        
+                 
+                  </span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#1-prerequisites">1. Prerequisites</a></li>
+    <li><a href="#2-create-a-cloudwatch-dashboard">2. Create a CloudWatch Dashboard</a></li>
+    <li><a href="#3-add-the-rejected8080flows-graph">3. Add the Rejected8080Flows Graph</a></li>
+    <li><a href="#4-add-the-alarm-status-widget">4. Add the Alarm Status Widget</a></li>
+    <li><a href="#5-analyze-accept-and-reject-records">5. Analyze ACCEPT and REJECT Records</a>
+      <ul>
+        <li><a href="#51-select-the-query-scope">5.1. Select the Query Scope</a></li>
+        <li><a href="#52-enter-the-query">5.2. Enter the Query</a></li>
+        <li><a href="#53-interpret-the-results">5.3. Interpret the Results</a></li>
+      </ul>
+    </li>
+    <li><a href="#6-add-the-query-results-to-the-dashboard">6. Add the Query Results to the Dashboard</a></li>
+    <li><a href="#7-arrange-and-verify-the-dashboard">7. Arrange and Verify the Dashboard</a></li>
+    <li><a href="#8-completion-criteria">8. Completion Criteria</a></li>
+  </ul>
+</nav>
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
+        <div id="head-tags">
+        
+        </div>
+        
+        <div id="body-inner">
+          
+            <h1>
+              
+              Dashboard and Network Log Analysis
+            </h1>
+          
+
+        
+
+
+
+	<p>In this section, we build a CloudWatch dashboard that brings network monitoring information together on one screen.</p>
+<p>The dashboard contains three components:</p>
+<table>
+<thead>
+<tr>
+<th>Component</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Rejected8080Flows graph</td>
+<td>Monitor rejected port 8080 flow records over time</td>
+</tr>
+<tr>
+<td>Alarm status widget</td>
+<td>Display the alarm&rsquo;s current state</td>
+</tr>
+<tr>
+<td>ACCEPT/REJECT table</td>
+<td>Summarize flow records by action and destination port</td>
+</tr>
+</tbody>
+</table>
+<p>We also use CloudWatch Logs Insights to analyze VPC Flow Logs and add the query results to the dashboard.</p>
+<h2 id="1-prerequisites">1. Prerequisites</h2>
+<p>Use <strong>US East (N. Virginia) — us-east-1</strong> when selecting the workshop metrics and logs.</p>
+<p>Verify the following resources:</p>
+<table>
+<thead>
+<tr>
+<th>Resource</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Log group</td>
+<td><code>/workshop/network/flowlogs</code></td>
+</tr>
+<tr>
+<td>Metric namespace</td>
+<td><code>Workshop/Network</code></td>
+</tr>
+<tr>
+<td>Metric name</td>
+<td><code>Rejected8080Flows</code></td>
+</tr>
+<tr>
+<td>Alarm</td>
+<td><code>aws-network-workshop-rejected-8080</code></td>
+</tr>
+</tbody>
+</table>
+<p>Test data from section 5.5 is required to populate the graph and query results.</p>
+<p>The sample query uses:</p>
+<table>
+<thead>
+<tr>
+<th>Address</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Test client&rsquo;s public IP</td>
+<td><code>1.55.6.233</code></td>
+</tr>
+<tr>
+<td>EC2 private IPv4</td>
+<td><code>10.10.1.130</code></td>
+</tr>
+</tbody>
+</table>
+<p>Update the query if either address has changed.</p>
+<h2 id="2-create-a-cloudwatch-dashboard">2. Create a CloudWatch Dashboard</h2>
+<ol>
+<li>Open <strong>CloudWatch</strong>.</li>
+<li>Choose <strong>Dashboards</strong> in the navigation pane.</li>
+<li>If the navigation pane is hidden, open it using the <strong>☰</strong> icon.</li>
+<li>Choose <strong>Create dashboard</strong>.</li>
+<li>Enter:</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>aws-network-workshop-dashboard
+</span></span></code></pre></div><ol start="6">
+<li>Choose <strong>Create dashboard</strong>.</li>
+</ol>
+<p>The console opens the widget configuration dialog for the first dashboard component.</p>
+<h2 id="3-add-the-rejected8080flows-graph">3. Add the Rejected8080Flows Graph</h2>
+<p>In <strong>Add widget</strong>, select:</p>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Data sources types</td>
+<td><code>CloudWatch</code></td>
+</tr>
+<tr>
+<td>Data type</td>
+<td><code>Metrics</code></td>
+</tr>
+<tr>
+<td>Preferred experience</td>
+<td><code>Metrics Console</code></td>
+</tr>
+<tr>
+<td>Widget type</td>
+<td><code>Line</code></td>
+</tr>
+</tbody>
+</table>
+<p>Choose <strong>Next</strong>.</p>
+<p>In the metric selector:</p>
+<ol>
+<li>Open <strong>Browse</strong>.</li>
+<li>Select <strong>Workshop/Network</strong>.</li>
+<li>Choose <strong>Metrics with no dimensions</strong>, if displayed.</li>
+<li>Select <strong>Rejected8080Flows</strong>.</li>
+<li>Open <strong>Graphed metrics</strong>.</li>
+</ol>
+<p>Configure:</p>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Statistic</td>
+<td><code>Sum</code></td>
+</tr>
+<tr>
+<td>Period</td>
+<td><code>5 minutes</code></td>
+</tr>
+<tr>
+<td>Time range</td>
+<td><code>3h</code>, or a range containing the test</td>
+</tr>
+</tbody>
+</table>
+<p>If the statistic is Average, change it to Sum. This displays the total value for each five-minute period and matches the alarm configuration.</p>
+<p><strong>Screenshot 01:</strong> Capture the metric configuration showing Rejected8080Flows, Sum and a five-minute period.</p>
+<p><img src="../../../images/5/01-metric-widget-config.png" alt="Cấu hình widget metric Rejected8080Flows"></p>
+<p>Choose <strong>Create widget</strong>, then <strong>Save dashboard</strong>.</p>
+<h2 id="4-add-the-alarm-status-widget">4. Add the Alarm Status Widget</h2>
+<p>On the dashboard:</p>
+<ol>
+<li>Choose <strong>Add widget</strong> or the <strong>+</strong> icon.</li>
+<li>Keep <strong>CloudWatch</strong> as the data source.</li>
+<li>Under <strong>Data type</strong>, choose <strong>Alarms</strong>, beside Metrics and Logs.</li>
+<li>Select <strong>Alarm status</strong>.</li>
+<li>Choose <strong>Next</strong>, if displayed.</li>
+<li>Find and select:</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>aws-network-workshop-rejected-8080
+</span></span></code></pre></div><ol start="7">
+<li>Complete the dialog using <strong>Create widget</strong> or <strong>Add to dashboard</strong>, as displayed.</li>
+<li>Choose <strong>Save dashboard</strong>.</li>
+</ol>
+<p>The widget displays the alarm&rsquo;s current state:</p>
+<table>
+<thead>
+<tr>
+<th>State</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>OK</td>
+<td>The alarm is not breaching under its configured evaluation settings</td>
+</tr>
+<tr>
+<td>ALARM</td>
+<td>The alarm is in its alert state</td>
+</tr>
+<tr>
+<td>INSUFFICIENT_DATA</td>
+<td>There is insufficient data for evaluation</td>
+</tr>
+</tbody>
+</table>
+<p>The state changes with the evaluated data. Selecting a historical dashboard time range does not make this widget display a historical alarm state.</p>
+<p><strong>Screenshot 02:</strong> Capture the alarm widget showing its name and current state.</p>
+<p><img src="../../../images/5/02-alarm-status-widget.png" alt="Widget trạng thái CloudWatch alarm"></p>
+<h2 id="5-analyze-accept-and-reject-records">5. Analyze ACCEPT and REJECT Records</h2>
+<p>In the CloudWatch navigation pane, open:</p>
+<p><strong>Logs → Log Analytics</strong></p>
+<p>Log Analytics brings together log analysis capabilities, including Logs Insights.</p>
+<h3 id="51-select-the-query-scope">5.1. Select the Query Scope</h3>
+<p>Under <strong>Query scope</strong>:</p>
+<ol>
+<li>Choose <strong>All</strong> beside <strong>Log group</strong>.</li>
+<li>Select:</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>/workshop/network/flowlogs
+</span></span></code></pre></div><ol start="3">
+<li>Keep <strong>Log class = Standard</strong>.</li>
+<li>Select <strong>3h</strong>, or use <strong>Custom</strong> to include the test period from section 5.5.</li>
+</ol>
+<p>Use <strong>Logs Insights QL</strong>. The default query containing <code>fields</code>, <code>sort</code> and <code>limit</code> in this interface already uses this language.</p>
+<h3 id="52-enter-the-query">5.2. Enter the Query</h3>
+<p>In the new interface, keep the first line beginning with <code>SOURCE</code>, if present. Replace the query from the <code>fields</code> line onward with:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>fields srcAddr, dstAddr, dstPort, protocol, action, logStatus
+</span></span><span style="display:flex;"><span>| filter srcAddr = &#34;1.55.6.233&#34;
+</span></span><span style="display:flex;"><span>    and dstAddr = &#34;10.10.1.130&#34;
+</span></span><span style="display:flex;"><span>    and protocol = 6
+</span></span><span style="display:flex;"><span>    and logStatus = &#34;OK&#34;
+</span></span><span style="display:flex;"><span>| filter dstPort = 80 or dstPort = 8080
+</span></span><span style="display:flex;"><span>| stats count(*) as FlowRecords by action, dstPort
+</span></span><span style="display:flex;"><span>| sort dstPort asc
+</span></span></code></pre></div><p>This query:</p>
+<ul>
+<li>Filters traffic from the test client&rsquo;s public IP to the EC2 private IP.</li>
+<li>Selects TCP records with an OK logging status.</li>
+<li>Limits destination ports to 80 and 8080.</li>
+<li>Groups records by action and destination port.</li>
+<li>Counts the records in each group.</li>
+</ul>
+<p>Choose <strong>Run</strong> or <strong>Run query</strong>.</p>
+<h3 id="53-interpret-the-results">5.3. Interpret the Results</h3>
+<p>The results contain:</p>
+<table>
+<thead>
+<tr>
+<th>Column</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>action</code></td>
+<td>ACCEPT or REJECT</td>
+</tr>
+<tr>
+<td><code>dstPort</code></td>
+<td>Destination port</td>
+</tr>
+<tr>
+<td><code>FlowRecords</code></td>
+<td>Matching record count within the selected time range</td>
+</tr>
+</tbody>
+</table>
+<p>When corresponding test traffic exists, the results can include ACCEPT on port 80 and REJECT on port 8080.</p>
+<p>FlowRecords counts flow log records, rather than page refreshes or individual packets.</p>
+<p>If no results appear, check:</p>
+<ul>
+<li>The selected log group.</li>
+<li>Whether the time range includes the test.</li>
+<li>Both IP addresses in the query.</li>
+<li>Whether Flow Logs have delivered the records.</li>
+</ul>
+<p><strong>Screenshot 03:</strong> Capture the selected log group, query text and results table.</p>
+<p><img src="../../../images/5/03-accept-reject-query.png" alt="Truy vấn thống kê ACCEPT và REJECT theo cổng"></p>
+<h2 id="6-add-the-query-results-to-the-dashboard">6. Add the Query Results to the Dashboard</h2>
+<p>After the query completes successfully:</p>
+<ol>
+<li>Choose <strong>Add to dashboard</strong>.</li>
+<li>Select:</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>aws-network-workshop-dashboard
+</span></span></code></pre></div><ol start="3">
+<li>Choose the <strong>Table</strong> widget type.</li>
+<li>Enter the widget name:</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>ACCEPT and REJECT by port
+</span></span></code></pre></div><ol start="5">
+<li>Choose <strong>Add to dashboard</strong>.</li>
+<li>Return to the dashboard and choose <strong>Save dashboard</strong>.</li>
+</ol>
+<p>The query table summarizes records across the selected time range. The metric graph shows individual five-minute periods and monitors only rejected port 8080 traffic.</p>
+<h2 id="7-arrange-and-verify-the-dashboard">7. Arrange and Verify the Dashboard</h2>
+<p>Open:</p>
+<p><strong>CloudWatch → Dashboards → aws-network-workshop-dashboard</strong></p>
+<p>Arrange the components:</p>
+<ul>
+<li>Rejected8080Flows graph at the top.</li>
+<li>Alarm status widget beside the graph.</li>
+<li>ACCEPT and REJECT by port table below.</li>
+</ul>
+<p>Drag a widget corner to resize it and drag its title area to reposition it.</p>
+<p>Select a time range containing the test and choose <strong>Refresh</strong>. Choose <strong>Save dashboard</strong> after changing the layout.</p>
+<p>Verify that the dashboard displays:</p>
+<ol>
+<li>Metric data in the graph.</li>
+<li>The alarm name and current state.</li>
+<li>The ACCEPT/REJECT results table.</li>
+</ol>
+<p><strong>Screenshot 04:</strong> Capture the full dashboard, including its name and all three widgets.</p>
+<p><img src="../../../images/5/04-monitoring-dashboard.png" alt="Dashboard giám sát mạng hoàn chỉnh"></p>
+<h2 id="8-completion-criteria">8. Completion Criteria</h2>
+<ul>
+<li><input disabled="" type="checkbox"> The aws-network-workshop-dashboard dashboard is created and saved.</li>
+<li><input disabled="" type="checkbox"> The graph uses Rejected8080Flows.</li>
+<li><input disabled="" type="checkbox"> The statistic is Sum and the period is five minutes.</li>
+<li><input disabled="" type="checkbox"> The alarm widget displays the correct name and current state.</li>
+<li><input disabled="" type="checkbox"> The Logs Insights query returns appropriate data.</li>
+<li><input disabled="" type="checkbox"> The results table is added to the dashboard.</li>
+<li><input disabled="" type="checkbox"> The required evidence screenshots are captured.</li>
+</ul>
+
+
+
+
+
+<footer class=" footline" >
+	
+</footer>
+
+        
+        </div> 
+        
+
+      </div>
+
+    <div id="navigation">
+        
+        
+        
+        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+        
+        
+
+
+	 
+	 
+		
+			<a class="nav nav-prev" href="/Workshop-template-master/5.workshop/5.5-system-testing/" title="Testing and Validating the Monitoring System"> <i class="fa fa-chevron-left"></i></a>
+		
+		
+			<a class="nav nav-next" href="/Workshop-template-master/5.workshop/5.7-troubleshooting/" title="Troubleshooting the Monitoring System" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+	
+    </div>
+
+    </section>
+    
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="/Workshop-template-master/js/clipboard.min.js?1795096901"></script>
+    <script src="/Workshop-template-master/js/perfect-scrollbar.min.js?1795096901"></script>
+    <script src="/Workshop-template-master/js/perfect-scrollbar.jquery.min.js?1795096901"></script>
+    <script src="/Workshop-template-master/js/jquery.sticky.js?1795096901"></script>
+    <script src="/Workshop-template-master/js/featherlight.min.js?1795096901"></script>
+    <script src="/Workshop-template-master/js/highlight.pack.js?1795096901"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="/Workshop-template-master/js/modernizr.custom-3.6.0.js?1795096901"></script>
+    <script src="/Workshop-template-master/js/learn.js?1795096901"></script>
+    <script src="/Workshop-template-master/js/hugo-learn.js?1795096901"></script>
+
+    <link href="/Workshop-template-master/mermaid/mermaid.css?1795096901" rel="stylesheet" />
+    <script src="/Workshop-template-master/mermaid/mermaid.js?1795096901"></script>
+    <script>
+        mermaid.initialize({ startOnLoad: true });
+    </script>
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-158079754-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+  </body>
+</html>

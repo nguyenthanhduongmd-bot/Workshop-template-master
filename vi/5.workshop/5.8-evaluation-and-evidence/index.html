@@ -1,0 +1,1931 @@
+<!DOCTYPE html>
+<html lang="vi" class="js csstransforms3d">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="Hugo 0.111.1">
+    <meta name="description" content="">
+<meta name="author" content="journeyoftheaverageguy@gmail.com">
+
+    <link rel="icon" href="/Workshop-template-master/images/favicon.png" type="image/png">
+
+    <title>Tổng hợp và đánh giá kết quả :: Tạo mới tài khoản AWS</title>
+
+    
+    <link href="/Workshop-template-master/css/nucleus.css?1795096901" rel="stylesheet">
+    <link href="/Workshop-template-master/css/fontawesome-all.min.css?1795096901" rel="stylesheet">
+    <link href="/Workshop-template-master/css/hybrid.css?1795096901" rel="stylesheet">
+    <link href="/Workshop-template-master/css/featherlight.min.css?1795096901" rel="stylesheet">
+    <link href="/Workshop-template-master/css/perfect-scrollbar.min.css?1795096901" rel="stylesheet">
+    <link href="/Workshop-template-master/css/auto-complete.css?1795096901" rel="stylesheet">
+    <link href="/Workshop-template-master/css/atom-one-dark-reasonable.css?1795096901" rel="stylesheet">
+    <link href="/Workshop-template-master/css/theme.css?1795096901" rel="stylesheet">
+    <link href="/Workshop-template-master/css/hugo-theme.css?1795096901" rel="stylesheet">
+    
+    <link href="/Workshop-template-master/css/theme-workshop.css?1795096901" rel="stylesheet">
+    
+    
+
+    <script src="/Workshop-template-master/js/jquery-3.3.1.min.js?1795096901"></script>
+
+    <style>
+      :root #header + #content > #left > #rlblock_left{
+          display:none !important;
+      }
+      
+    </style>
+    
+  </head>
+  <body class="" data-url="/Workshop-template-master/vi/5.workshop/5.8-evaluation-and-evidence/">
+    <nav id="sidebar" class="showVisitedLinks">
+
+
+
+  <div id="header-wrapper">
+    <div id="header">
+      <a id="logo" href="/">
+
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 30" width="30%"><defs><style>.cls-1{fill:#fff;}.cls-2{fill:#f90;fill-rule:evenodd;}</style></defs><title>AWS-Logo_White-Color</title><path class="cls-1" d="M14.09,10.85a4.7,4.7,0,0,0,.19,1.48,7.73,7.73,0,0,0,.54,1.19.77.77,0,0,1,.12.38.64.64,0,0,1-.32.49l-1,.7a.83.83,0,0,1-.44.15.69.69,0,0,1-.49-.23,3.8,3.8,0,0,1-.6-.77q-.25-.42-.51-1a6.14,6.14,0,0,1-4.89,2.3,4.54,4.54,0,0,1-3.32-1.19,4.27,4.27,0,0,1-1.22-3.2A4.28,4.28,0,0,1,3.61,7.75,6.06,6.06,0,0,1,7.69,6.46a12.47,12.47,0,0,1,1.76.13q.92.13,1.91.36V5.73a3.65,3.65,0,0,0-.79-2.66A3.81,3.81,0,0,0,7.86,2.3a7.71,7.71,0,0,0-1.79.22,12.78,12.78,0,0,0-1.79.57,4.55,4.55,0,0,1-.58.22l-.26,0q-.35,0-.35-.52V2a1.09,1.09,0,0,1,.12-.58,1.2,1.2,0,0,1,.47-.35A10.88,10.88,0,0,1,5.77.32,10.19,10.19,0,0,1,8.36,0a6,6,0,0,1,4.35,1.35,5.49,5.49,0,0,1,1.38,4.09ZM7.34,13.38a5.36,5.36,0,0,0,1.72-.31A3.63,3.63,0,0,0,10.63,12,2.62,2.62,0,0,0,11.19,11a5.63,5.63,0,0,0,.16-1.44v-.7a14.35,14.35,0,0,0-1.53-.28,12.37,12.37,0,0,0-1.56-.1,3.84,3.84,0,0,0-2.47.67A2.34,2.34,0,0,0,5,11a2.35,2.35,0,0,0,.61,1.76A2.4,2.4,0,0,0,7.34,13.38Zm13.35,1.8a1,1,0,0,1-.64-.16,1.3,1.3,0,0,1-.35-.65L15.81,1.51a3,3,0,0,1-.15-.67.36.36,0,0,1,.41-.41H17.7a1,1,0,0,1,.65.16,1.4,1.4,0,0,1,.33.65l2.79,11,2.59-11A1.17,1.17,0,0,1,24.39.6a1.1,1.1,0,0,1,.67-.16H26.4a1.1,1.1,0,0,1,.67.16,1.17,1.17,0,0,1,.32.65L30,12.39,32.88,1.25A1.39,1.39,0,0,1,33.22.6a1,1,0,0,1,.65-.16h1.54a.36.36,0,0,1,.41.41,1.36,1.36,0,0,1,0,.26,3.64,3.64,0,0,1-.12.41l-4,12.86a1.3,1.3,0,0,1-.35.65,1,1,0,0,1-.64.16H29.25a1,1,0,0,1-.67-.17,1.26,1.26,0,0,1-.32-.67L25.67,3.64,23.11,14.34a1.26,1.26,0,0,1-.32.67,1,1,0,0,1-.67.17Zm21.36.44a11.28,11.28,0,0,1-2.56-.29,7.44,7.44,0,0,1-1.92-.67,1,1,0,0,1-.61-.93v-.84q0-.52.38-.52a.9.9,0,0,1,.31.06l.42.17a8.77,8.77,0,0,0,1.83.58,9.78,9.78,0,0,0,2,.2,4.48,4.48,0,0,0,2.43-.55,1.76,1.76,0,0,0,.86-1.57,1.61,1.61,0,0,0-.45-1.16A4.29,4.29,0,0,0,43,9.22l-2.41-.76A5.15,5.15,0,0,1,38,6.78a3.94,3.94,0,0,1-.83-2.41,3.7,3.7,0,0,1,.45-1.85,4.47,4.47,0,0,1,1.19-1.37A5.27,5.27,0,0,1,40.51.29,7.4,7.4,0,0,1,42.6,0a8.87,8.87,0,0,1,1.12.07q.57.07,1.08.19t.95.26a4.27,4.27,0,0,1,.7.29,1.59,1.59,0,0,1,.49.41.94.94,0,0,1,.15.55v.79q0,.52-.38.52a1.76,1.76,0,0,1-.64-.2,7.74,7.74,0,0,0-3.2-.64,4.37,4.37,0,0,0-2.21.47,1.6,1.6,0,0,0-.79,1.48,1.58,1.58,0,0,0,.49,1.18,4.94,4.94,0,0,0,1.83.92L44.55,7a5.08,5.08,0,0,1,2.57,1.6A3.76,3.76,0,0,1,47.9,11a4.21,4.21,0,0,1-.44,1.93,4.4,4.4,0,0,1-1.21,1.47,5.43,5.43,0,0,1-1.85.93A8.25,8.25,0,0,1,42.05,15.62Z"></path><path class="cls-2" d="M45.19,23.81C39.72,27.85,31.78,30,25,30A36.64,36.64,0,0,1,.22,20.57c-.51-.46-.06-1.09.56-.74A49.78,49.78,0,0,0,25.53,26.4,49.23,49.23,0,0,0,44.4,22.53C45.32,22.14,46.1,23.14,45.19,23.81Z"></path><path class="cls-2" d="M47.47,21.21c-.7-.9-4.63-.42-6.39-.21-.53.06-.62-.4-.14-.74,3.13-2.2,8.27-1.57,8.86-.83s-.16,5.89-3.09,8.35c-.45.38-.88.18-.68-.32C46.69,25.8,48.17,22.11,47.47,21.21Z"></path></svg>
+
+</a>
+
+    </div>
+    
+        <div class="searchbox">
+    <label for="search-by"><i class="fas fa-search"></i></label>
+    <input data-search-input id="search-by" type="search" placeholder="Search...">
+    <span data-search-clear=""><i class="fas fa-times"></i></span>
+</div>
+
+<script type="text/javascript" src="/Workshop-template-master/js/lunr.min.js?1795096901"></script>
+<script type="text/javascript" src="/Workshop-template-master/js/auto-complete.js?1795096901"></script>
+<script type="text/javascript">
+    
+        var baseurl = "https:\/\/nguyenthanhduongmd-bot.github.io\/Workshop-template-master\/\/vi";
+    
+</script>
+<script type="text/javascript" src="/Workshop-template-master/js/search.js?1795096901"></script>
+
+    
+  </div>
+
+    <div class="highlightable">
+    <ul class="topics">
+
+        
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/Workshop-template-master/vi/1.worklogs/" title="" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/Workshop-template-master/vi/1.worklogs/">
+           <b> 1.Worklog</b> 
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/Workshop-template-master/vi/1.worklogs/1.1-worklog-week-1/" title="" class="dd-item ">
+        <a href="/Workshop-template-master/vi/1.worklogs/1.1-worklog-week-1/">
+         <b> 1.1 Nhật ký làm việc tuần 1 </b> 
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/Workshop-template-master/vi/1.worklogs/1.2-worklog-week-2/" title="" class="dd-item ">
+        <a href="/Workshop-template-master/vi/1.worklogs/1.2-worklog-week-2/">
+         <b> 1.2 Nhật ký làm việc tuần 2 </b> 
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/Workshop-template-master/vi/1.worklogs/1.3-worklog-week-3/" title="" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/Workshop-template-master/vi/1.worklogs/1.3-worklog-week-3/">
+           <b> 1.3 Nhật ký làm việc tuần 3 </b> 
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/Workshop-template-master/vi/1.worklogs/1.4-worklog-week-4/" title="" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/Workshop-template-master/vi/1.worklogs/1.4-worklog-week-4/">
+           <b> 1.4 Nhật ký làm việc tuần 4 </b> 
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/Workshop-template-master/vi/1.worklogs/1.5-worklog-week-5/" title="" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/Workshop-template-master/vi/1.worklogs/1.5-worklog-week-5/">
+           <b> 1.5 Nhật ký làm việc tuần 5 </b> 
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/Workshop-template-master/vi/1.worklogs/1.6-worklog-week-6/" title="" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/Workshop-template-master/vi/1.worklogs/1.6-worklog-week-6/">
+           <b> 1.6 Nhật ký làm việc tuần 6 </b> 
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/Workshop-template-master/vi/1.worklogs/1.7-worklog-week-7/" title="" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/Workshop-template-master/vi/1.worklogs/1.7-worklog-week-7/">
+           <b> 1.7 Nhật ký làm việc tuần 7 </b> 
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/Workshop-template-master/vi/1.worklogs/1.8-worklog-week-8/" title="" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/Workshop-template-master/vi/1.worklogs/1.8-worklog-week-8/">
+           <b> 1.8 Nhật ký làm việc tuần 8 </b> 
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/Workshop-template-master/vi/1.worklogs/1.9-worklog-week-9/" title="" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/Workshop-template-master/vi/1.worklogs/1.9-worklog-week-9/">
+           <b> 1.9 Nhật ký làm việc tuần 9 </b> 
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/Workshop-template-master/vi/1.worklogs/1.10-worklog-week-10/" title="" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/Workshop-template-master/vi/1.worklogs/1.10-worklog-week-10/">
+           <b> 1.10 Nhật ký làm việc tuần 10 </b> 
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/Workshop-template-master/vi/1.worklogs/1.11-worklog-week-11/" title="" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/Workshop-template-master/vi/1.worklogs/1.11-worklog-week-11/">
+           <b> 1.11 Nhật ký làm việc tuần 11 </b> 
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/Workshop-template-master/vi/1.worklogs/1.12-worklog-week-12/" title="" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/Workshop-template-master/vi/1.worklogs/1.12-worklog-week-12/">
+           <b> 1.12 Nhật ký làm việc tuần 12 </b> 
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/Workshop-template-master/vi/2.proposal/" title="" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/Workshop-template-master/vi/2.proposal/">
+           <b> 2. Bản đề xuất </b> 
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/Workshop-template-master/vi/3.blogs-posted/" title="" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/Workshop-template-master/vi/3.blogs-posted/">
+           <b> 3.Các bài blogs đã đăng </b> 
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/Workshop-template-master/vi/4.meetup-events-attended/" title="Hỗ trợ Xác thực Tài khoản" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/Workshop-template-master/vi/4.meetup-events-attended/">
+           <b> 4. </b> Hỗ trợ Xác thực Tài khoản
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/Workshop-template-master/vi/5.workshop/" title="" class="dd-item 
+        parent
+        
+        
+        ">
+      <a href="/Workshop-template-master/vi/5.workshop/">
+          <b>5. Workshop </b>
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/Workshop-template-master/vi/5.workshop/5.1-overview/" title="Tổng quan" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/Workshop-template-master/vi/5.workshop/5.1-overview/">
+          <b>5.1. </b>Tổng quan
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/Workshop-template-master/vi/5.workshop/5.2-prerequisites/" title="5.2. Chuẩn bị" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/Workshop-template-master/vi/5.workshop/5.2-prerequisites/">
+          <b>5.2. </b>5.2. Chuẩn bị
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/Workshop-template-master/vi/5.workshop/5.3-infrastructure-automation/" title="Triển khai mạng và EC2" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/Workshop-template-master/vi/5.workshop/5.3-infrastructure-automation/">
+          <b>5.3. </b>Triển khai mạng và EC2
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/Workshop-template-master/vi/5.workshop/5.4-deployment/" title="Cấu hình giám sát" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/Workshop-template-master/vi/5.workshop/5.4-deployment/">
+          <b>5.4. </b>Cấu hình giám sát
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/Workshop-template-master/vi/5.workshop/5.5-system-testing/" title="Kiểm thử và xác minh hệ thống giám sát" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/Workshop-template-master/vi/5.workshop/5.5-system-testing/">
+          <b>5.5. </b>Kiểm thử và xác minh hệ thống giám sát
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/Workshop-template-master/vi/5.workshop/5.6-dashboards-and-data-analysis/" title="Dashboard và phân tích nhật ký mạng" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/Workshop-template-master/vi/5.workshop/5.6-dashboards-and-data-analysis/">
+          <b>5.6. </b>Dashboard và phân tích nhật ký mạng
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/Workshop-template-master/vi/5.workshop/5.7-troubleshooting/" title="Xử lý lỗi trong hệ thống giám sát" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/Workshop-template-master/vi/5.workshop/5.7-troubleshooting/">
+          <b>5.7. </b>Xử lý lỗi trong hệ thống giám sát
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/Workshop-template-master/vi/5.workshop/5.8-evaluation-and-evidence/" title="Tổng hợp và đánh giá kết quả" class="dd-item 
+        
+        active
+        
+        ">
+      <a href="/Workshop-template-master/vi/5.workshop/5.8-evaluation-and-evidence/">
+          <b>5.8. </b>Tổng hợp và đánh giá kết quả
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/Workshop-template-master/vi/5.workshop/5.9-resource-cleanup/" title="Dọn dẹp tài nguyên" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/Workshop-template-master/vi/5.workshop/5.9-resource-cleanup/">
+          <b>5.9. </b>Dọn dẹp tài nguyên
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/Workshop-template-master/vi/6.-self-evaluation/" title="Tự đánh giá" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/Workshop-template-master/vi/6.-self-evaluation/">
+          <b>6. </b>Tự đánh giá
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/Workshop-template-master/vi/7.-sharing-and-feedback/" title="Chia sẻ và đóng góp ý kiến" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/Workshop-template-master/vi/7.-sharing-and-feedback/">
+          <b>7. </b>Chia sẻ và đóng góp ý kiến
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+         
+    </ul>
+
+    
+    
+      <section id="shortcuts">
+        <h3>More</h3>
+        <ul>
+          
+              <li> 
+                  <a class="padding" href="http://awsstudygroup.com"><i class='fab fa-aws'></i> AWS Study Group - Blog</a>
+              </li>
+          
+              <li> 
+                  <a class="padding" href="https://www.facebook.com/groups/awsstudygroupfcj"><i class='fab fa-facebook'></i> AWS Study Group - Nhóm FB</a>
+              </li>
+          
+        </ul>
+      </section>
+    
+
+    
+    <section id="prefooter">
+      <hr/>
+      <ul>
+      
+        <li>
+          <a class="padding">
+            <i class="fas fa-language fa-fw"></i>
+          <div class="select-style">
+            <select id="select-language" onchange="location = this.value;">
+          
+          
+          
+              
+              
+                  
+                    
+                    
+                      <option id="en" value="https://nguyenthanhduongmd-bot.github.io/Workshop-template-master/5.workshop/5.8-evaluation-and-evidence/">English</option>
+                    
+                  
+              
+                  
+              
+          
+              
+              
+                  
+              
+                  
+                    
+                    
+                      <option id="vi" value="https://nguyenthanhduongmd-bot.github.io/Workshop-template-master/vi/5.workshop/5.8-evaluation-and-evidence/" selected>Tiếng Việt</option>
+                    
+                  
+              
+          
+        </select>
+        <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+          width="255px" height="255px" viewBox="0 0 255 255" style="enable-background:new 0 0 255 255;" xml:space="preserve">
+          <g>
+            <g id="arrow-drop-down">
+              <polygon points="0,63.75 127.5,191.25 255,63.75 		" />
+            </g>
+          </g>
+        </svg>
+        </div>
+        </a>
+        </li>
+      
+      
+      
+        <li><a class="padding" href="#" data-clear-history-toggle=""><i class="fas fa-history fa-fw"></i> Clear History</a></li>
+      
+      </ul>
+    </section>
+    
+    <section id="footer">
+      <left>
+    
+     <b> Workshop</b> <br>
+    <img src="https://hitwebcounter.com/counter/counter.php?page=7830891&style=0038&nbdigits=9&type=page&initCount=0" title="Migrate" Alt="web counter"   border="0" /></a>  <br>
+     <b> <a href="https://cloudjourney.awsstudygroup.com/">Cloud Journey</a></b> <br>
+    <img src="https://hitwebcounter.com/counter/counter.php?page=7830807&style=0038&nbdigits=9&type=page&initCount=0" title="Total CLoud Journey" Alt="web counter"   border="0"   />
+     
+</left>
+<left>
+    <br>
+    <br>
+        <b> Last Updated </b> <br>
+        <i><font color=orange>26-11-2023</font></i>
+    </left>
+    <left>
+        <br>
+        <br>
+            <b> Team </b> <br>
+           
+            <i>
+                <a href="https://www.linkedin.com/in/jotaguy"  style="color:orange">Gia Hưng</a>
+        </i>
+        </left>
+
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+
+    </section>
+  </div>
+</nav>
+
+
+
+
+        <section id="body">
+        <div id="overlay"></div>
+        <div class="padding highlightable">
+              
+              <div>
+                <div id="top-bar">
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fas fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
+                  
+                  <span class="links">
+                 
+                 
+                    
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/Workshop-template-master/vi/'></a> > <a href='/Workshop-template-master/vi/5.workshop/'></a> > Tổng hợp và đánh giá kết quả
+          
+        
+          
+        
+          
+        
+                 
+                  </span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#1-chuẩn-bị-thông-tin-đánh-giá">1. Chuẩn bị thông tin đánh giá</a></li>
+    <li><a href="#2-kiểm-tra-dashboard-tổng-hợp">2. Kiểm tra dashboard tổng hợp</a></li>
+    <li><a href="#3-đối-chiếu-kết-quả-kiểm-thử">3. Đối chiếu kết quả kiểm thử</a></li>
+    <li><a href="#4-đối-chiếu-thời-gian-và-đánh-giá-độ-trễ">4. Đối chiếu thời gian và đánh giá độ trễ</a>
+      <ul>
+        <li><a href="#41-thu-thập-các-mốc-thời-gian">4.1. Thu thập các mốc thời gian</a></li>
+        <li><a href="#42-tính-độ-trễ">4.2. Tính độ trễ</a></li>
+      </ul>
+    </li>
+    <li><a href="#5-đánh-giá-khả-năng-của-hệ-thống">5. Đánh giá khả năng của hệ thống</a></li>
+    <li><a href="#6-ghi-nhận-giới-hạn">6. Ghi nhận giới hạn</a>
+      <ul>
+        <li><a href="#61-phạm-vi-bộ-lọc">6.1. Phạm vi bộ lọc</a></li>
+        <li><a href="#62-độ-trễ-chuyển-dữ-liệu">6.2. Độ trễ chuyển dữ liệu</a></li>
+        <li><a href="#63-ý-nghĩa-của-số-liệu">6.3. Ý nghĩa của số liệu</a></li>
+        <li><a href="#64-dữ-liệu-mới-và-dữ-liệu-thiếu">6.4. Dữ liệu mới và dữ liệu thiếu</a></li>
+        <li><a href="#65-điều-kiện-gửi-thông-báo">6.5. Điều kiện gửi thông báo</a></li>
+      </ul>
+    </li>
+    <li><a href="#7-ghi-nhận-nhận-xét">7. Ghi nhận nhận xét</a></li>
+    <li><a href="#8-tiêu-chí-hoàn-thành">8. Tiêu chí hoàn thành</a></li>
+  </ul>
+</nav>
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
+        <div id="head-tags">
+        
+        </div>
+        
+        <div id="body-inner">
+          
+            <h1>
+              
+              Tổng hợp và đánh giá kết quả
+            </h1>
+          
+
+        
+
+
+
+	<p>Trong phần này, chúng ta tổng hợp bằng chứng và đánh giá kết quả triển khai hệ thống giám sát mạng trên AWS.</p>
+<p>Việc đánh giá dựa trên dữ liệu thực tế từ:</p>
+<ul>
+<li>Kết quả kiểm thử kết nối.</li>
+<li>VPC Flow Logs.</li>
+<li>CloudWatch metric và alarm.</li>
+<li>Email cảnh báo Amazon SNS.</li>
+<li>Dashboard giám sát.</li>
+<li>Kết quả xử lý lỗi.</li>
+</ul>
+<p>Các ảnh đã chụp ở những phần trước có thể được sử dụng lại nếu thể hiện đầy đủ thông tin cần đánh giá.</p>
+<h2 id="1-chuẩn-bị-thông-tin-đánh-giá">1. Chuẩn bị thông tin đánh giá</h2>
+<p>Sử dụng Region <strong>US East (N. Virginia) — us-east-1</strong> khi mở metric, log và alarm.</p>
+<p>Các tài nguyên cần đối chiếu:</p>
+<table>
+<thead>
+<tr>
+<th>Tài nguyên</th>
+<th>Giá trị</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Log group</td>
+<td><code>/workshop/network/flowlogs</code></td>
+</tr>
+<tr>
+<td>Metric namespace</td>
+<td><code>Workshop/Network</code></td>
+</tr>
+<tr>
+<td>Metric name</td>
+<td><code>Rejected8080Flows</code></td>
+</tr>
+<tr>
+<td>Alarm</td>
+<td><code>aws-network-workshop-rejected-8080</code></td>
+</tr>
+<tr>
+<td>SNS topic</td>
+<td><code>aws-network-workshop-alerts</code></td>
+</tr>
+<tr>
+<td>Dashboard</td>
+<td><code>aws-network-workshop-dashboard</code></td>
+</tr>
+</tbody>
+</table>
+<p>Chọn một đợt kiểm thử đã thực hiện ở phần 5.5 để đối chiếu các bằng chứng.</p>
+<p>Kiểm tra địa chỉ nguồn, địa chỉ đích, cổng và thời gian để bảo đảm các dữ liệu đang đánh giá thuộc cùng đợt kiểm thử.</p>
+<h2 id="2-kiểm-tra-dashboard-tổng-hợp">2. Kiểm tra dashboard tổng hợp</h2>
+<p>Mở:</p>
+<p><strong>CloudWatch → Dashboards → aws-network-workshop-dashboard</strong></p>
+<p>Chọn khoảng thời gian chứa đợt kiểm thử, sau đó bấm <strong>Refresh</strong>.</p>
+<p>Kiểm tra ba thành phần:</p>
+<table>
+<thead>
+<tr>
+<th>Thành phần</th>
+<th>Nội dung cần xác minh</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Biểu đồ metric</td>
+<td>Rejected8080Flows có dữ liệu, Statistic Sum và Period 5 minutes</td>
+</tr>
+<tr>
+<td>Alarm status</td>
+<td>Hiển thị đúng tên alarm và trạng thái hiện tại</td>
+</tr>
+<tr>
+<td>Bảng phân tích log</td>
+<td>Có các cột action, dstPort và FlowRecords với kết quả phù hợp</td>
+</tr>
+</tbody>
+</table>
+<p>Widget trạng thái alarm hiển thị trạng thái hiện tại. Alarm có thể đã trở về OK sau đợt thử.</p>
+<p>Để xác minh lần cảnh báo trước đó, mở History của alarm thay vì chỉ dựa vào trạng thái hiện tại trên dashboard.</p>
+<p><strong>Vị trí chụp ảnh 01:</strong> Toàn bộ dashboard, nhìn thấy tên dashboard và cả ba widget.</p>
+<p><img src="../../../images/7/01-evaluation-dashboard.png" alt="Dashboard tổng hợp phục vụ đánh giá kết quả"></p>
+<h2 id="3-đối-chiếu-kết-quả-kiểm-thử">3. Đối chiếu kết quả kiểm thử</h2>
+<p>Với mỗi mục, ghi một trong ba trạng thái:</p>
+<ul>
+<li><strong>Đạt:</strong> Có bằng chứng đáp ứng điều kiện.</li>
+<li><strong>Chưa đạt:</strong> Đã kiểm tra và kết quả chưa đáp ứng điều kiện.</li>
+<li><strong>Chưa xác minh:</strong> Chưa có đủ dữ liệu để kết luận.</li>
+</ul>
+<p>Điền cột Kết quả sau khi đối chiếu thực tế.</p>
+<table>
+<thead>
+<tr>
+<th>Nội dung</th>
+<th>Điều kiện đánh giá Đạt</th>
+<th>Bằng chứng</th>
+<th>Kết quả</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Truy cập ứng dụng</td>
+<td>HTTP cổng 80 hiển thị trang web</td>
+<td>Ảnh trình duyệt</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Kiểm soát kết nối</td>
+<td>Kết nối TCP cổng 8080 thất bại</td>
+<td>Kết quả PowerShell</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Thu thập nhật ký</td>
+<td>Có bản ghi đúng nguồn, đích, cổng 8080, REJECT và OK</td>
+<td>Bản ghi Flow Logs mở rộng</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Tạo metric</td>
+<td>Rejected8080Flows có giá trị Sum từ 1 trở lên trong đợt thử</td>
+<td>Biểu đồ metric</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Kích hoạt cảnh báo</td>
+<td>Alarm chuyển ALARM từ dữ liệu kiểm thử</td>
+<td>Alarm History</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Gửi thông báo</td>
+<td>Nhận email cảnh báo có tên alarm và thời gian tương ứng</td>
+<td>Email từ SNS</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Hiển thị tập trung</td>
+<td>Dashboard được lưu và có đủ ba widget</td>
+<td>Dashboard tổng hợp</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<p>Email kiểm thử trực tiếp với tiêu đề <code>Workshop 5.7 - SNS delivery test</code> xác minh chức năng gửi thư của SNS.</p>
+<p>Để đánh giá luồng cảnh báo từ CloudWatch, sử dụng email chứa tên alarm và trạng thái ALARM của đợt kiểm thử.</p>
+<h2 id="4-đối-chiếu-thời-gian-và-đánh-giá-độ-trễ">4. Đối chiếu thời gian và đánh giá độ trễ</h2>
+<h3 id="41-thu-thập-các-mốc-thời-gian">4.1. Thu thập các mốc thời gian</h3>
+<p>Mở:</p>
+<p><strong>CloudWatch → Alarms → aws-network-workshop-rejected-8080 → History</strong></p>
+<p>Tìm sự kiện chuyển sang ALARM trong đợt kiểm thử và ghi lại thời gian.</p>
+<p>Đối chiếu với các mốc:</p>
+<table>
+<thead>
+<tr>
+<th>Mốc</th>
+<th>Ý nghĩa</th>
+<th>Nguồn</th>
+<th>Giá trị thực tế</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>T0</td>
+<td>Thời gian bắt đầu kiểm thử</td>
+<td>Get-Date hoặc thời gian đã ghi ở phần 5.5</td>
+<td>—</td>
+</tr>
+<tr>
+<td>T_flow</td>
+<td>Thời gian bản ghi lưu lượng</td>
+<td>Timestamp trong CloudWatch Logs</td>
+<td>—</td>
+</tr>
+<tr>
+<td>T_alarm</td>
+<td>Thời gian alarm chuyển ALARM</td>
+<td>Alarm History</td>
+<td>—</td>
+</tr>
+<tr>
+<td>T_email</td>
+<td>Thời gian nhận email</td>
+<td>Hộp thư đã đăng ký SNS</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<p>Thống nhất múi giờ trước khi so sánh.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>Giờ Việt Nam = UTC + 7 giờ
+</span></span></code></pre></div><p>Timestamp của bản ghi Flow Logs trong CloudWatch tương ứng với thời gian bắt đầu flow. Thời điểm CloudWatch nhận bản ghi là một mốc khác.</p>
+<p>Khi đánh giá độ trễ từ lúc bắt đầu phép thử, sử dụng T0 đã ghi thực tế.</p>
+<p><strong>Vị trí chụp ảnh 02:</strong> Alarm History có tên alarm, sự kiện chuyển ALARM và thời gian.</p>
+<p><img src="../../../images/7/02-evaluation-alarm-history.png" alt="Lịch sử alarm dùng để đối chiếu thời gian"></p>
+<h3 id="42-tính-độ-trễ">4.2. Tính độ trễ</h3>
+<p>Nếu có đủ dữ liệu, tính:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>Độ trễ cảnh báo = T_alarm - T0
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Độ trễ nhận email = T_email - T0
+</span></span></code></pre></div><p>Ghi kết quả đo:</p>
+<table>
+<thead>
+<tr>
+<th>Chỉ số</th>
+<th>Kết quả thực tế</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Độ trễ cảnh báo</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Độ trễ nhận email</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<p>Nếu chưa ghi T0 hoặc thiếu một mốc cần thiết, ghi <strong>Chưa đo được</strong> cho chỉ số tương ứng.</p>
+<p>Giữ độ chính xác phù hợp với dữ liệu hiển thị. Nếu hộp thư chỉ hiển thị đến phút, không báo cáo kết quả chính xác đến giây.</p>
+<p><strong>Vị trí chụp ảnh 03:</strong> Email cảnh báo thể hiện tên alarm, trạng thái ALARM và thời gian.</p>
+<p><img src="../../../images/7/03-evaluation-alert-email.png" alt="Email cảnh báo dùng để đánh giá kết quả"></p>
+<h2 id="5-đánh-giá-khả-năng-của-hệ-thống">5. Đánh giá khả năng của hệ thống</h2>
+<p>Đối chiếu bằng chứng với các khả năng sau:</p>
+<table>
+<thead>
+<tr>
+<th>Khả năng</th>
+<th>Nội dung đánh giá</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Kiểm soát lưu lượng</td>
+<td>Security Group áp dụng quy tắc truy cập đã cấu hình</td>
+</tr>
+<tr>
+<td>Thu thập tự động</td>
+<td>Flow Logs ghi nhận và chuyển dữ liệu mạng đến CloudWatch Logs</td>
+</tr>
+<tr>
+<td>Tạo dữ liệu giám sát</td>
+<td>Metric filter chuyển bản ghi khớp thành điểm dữ liệu</td>
+</tr>
+<tr>
+<td>Cảnh báo tự động</td>
+<td>Alarm đánh giá ngưỡng và thực hiện hành động khi chuyển trạng thái</td>
+</tr>
+<tr>
+<td>Gửi thông báo</td>
+<td>SNS chuyển thông báo đến email đã xác nhận</td>
+</tr>
+<tr>
+<td>Quan sát tập trung</td>
+<td>Dashboard tập hợp metric, trạng thái alarm và bảng phân tích log</td>
+</tr>
+<tr>
+<td>Phân tích sự cố</td>
+<td>Logs Insights hỗ trợ lọc và thống kê dữ liệu kiểm thử</td>
+</tr>
+</tbody>
+</table>
+<p>Chỉ ghi nhận một khả năng đã được xác minh khi có bằng chứng tương ứng.</p>
+<p>Trong workshop này, hạ tầng được triển khai qua AWS Console. Phạm vi tự động hóa được cấu hình là quá trình thu thập log, tạo metric, đánh giá alarm và gửi thông báo.</p>
+<h2 id="6-ghi-nhận-giới-hạn">6. Ghi nhận giới hạn</h2>
+<h3 id="61-phạm-vi-bộ-lọc">6.1. Phạm vi bộ lọc</h3>
+<p>Metric filter đang theo dõi địa chỉ nguồn, địa chỉ đích và cổng 8080 cụ thể.</p>
+<p>Khi IP thay đổi, cần cập nhật bộ lọc để tiếp tục theo dõi đúng lưu lượng.</p>
+<h3 id="62-độ-trễ-chuyển-dữ-liệu">6.2. Độ trễ chuyển dữ liệu</h3>
+<p>Flow Logs cần thời gian tổng hợp và chuyển log. Aggregation interval một phút không bảo đảm toàn bộ quá trình cảnh báo hoàn tất trong một phút.</p>
+<h3 id="63-ý-nghĩa-của-số-liệu">6.3. Ý nghĩa của số liệu</h3>
+<p>Rejected8080Flows đếm các bản ghi khớp bộ lọc.</p>
+<p>Số bản ghi có thể khác số lần chạy lệnh, số lần tải lại trang hoặc số gói tin do lưu lượng được tổng hợp thành flow records.</p>
+<h3 id="64-dữ-liệu-mới-và-dữ-liệu-thiếu">6.4. Dữ liệu mới và dữ liệu thiếu</h3>
+<p>Metric filter xử lý dữ liệu mới sau khi được tạo và không tính lại log cũ.</p>
+<p>Cấu hình xử lý dữ liệu thiếu có thể ảnh hưởng đến trạng thái OK của alarm. Cần đối chiếu log, metric, lịch sử alarm và email để đánh giá toàn bộ quá trình.</p>
+<h3 id="65-điều-kiện-gửi-thông-báo">6.5. Điều kiện gửi thông báo</h3>
+<p>Thông báo alarm được kích hoạt khi có lần chuyển trạng thái phù hợp. Các kết nối thử bổ sung không tạo một email mới nếu alarm tiếp tục giữ nguyên ALARM.</p>
+<h2 id="7-ghi-nhận-nhận-xét">7. Ghi nhận nhận xét</h2>
+<p>Hoàn thiện bảng dựa trên kết quả thực tế:</p>
+<table>
+<thead>
+<tr>
+<th>Nội dung</th>
+<th>Nhận xét</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Các hạng mục đã xác minh đạt</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Các hạng mục chưa đạt hoặc chưa xác minh</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Kết quả đo độ trễ, nếu có</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Những lỗi đã gặp và cách khắc phục</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Giới hạn của cấu hình hiện tại</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Nội dung cần cải thiện</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<h2 id="8-tiêu-chí-hoàn-thành">8. Tiêu chí hoàn thành</h2>
+<ul>
+<li><input disabled="" type="checkbox"> Đã đối chiếu bằng chứng của cùng một đợt kiểm thử.</li>
+<li><input disabled="" type="checkbox"> Đã điền bảng đánh giá theo kết quả thực tế.</li>
+<li><input disabled="" type="checkbox"> Đã ghi các mốc thời gian có bằng chứng.</li>
+<li><input disabled="" type="checkbox"> Các chỉ số chưa đủ dữ liệu được ghi rõ là Chưa đo được.</li>
+<li><input disabled="" type="checkbox"> Đã đánh giá khả năng hoạt động và giới hạn.</li>
+<li><input disabled="" type="checkbox"> Đã lưu đủ ảnh minh chứng.</li>
+</ul>
+<p>Sau khi hoàn tất đánh giá và lưu bằng chứng, chuyển sang phần <strong>5.9 — Dọn dẹp tài nguyên</strong>.</p>
+
+
+
+
+
+<footer class=" footline" >
+	
+</footer>
+
+        
+        </div> 
+        
+
+      </div>
+
+    <div id="navigation">
+        
+        
+        
+        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+        
+        
+
+
+	 
+	 
+		
+			<a class="nav nav-prev" href="/Workshop-template-master/vi/5.workshop/5.7-troubleshooting/" title="Xử lý lỗi trong hệ thống giám sát"> <i class="fa fa-chevron-left"></i></a>
+		
+		
+			<a class="nav nav-next" href="/Workshop-template-master/vi/5.workshop/5.9-resource-cleanup/" title="Dọn dẹp tài nguyên" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+	
+    </div>
+
+    </section>
+    
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="/Workshop-template-master/js/clipboard.min.js?1795096901"></script>
+    <script src="/Workshop-template-master/js/perfect-scrollbar.min.js?1795096901"></script>
+    <script src="/Workshop-template-master/js/perfect-scrollbar.jquery.min.js?1795096901"></script>
+    <script src="/Workshop-template-master/js/jquery.sticky.js?1795096901"></script>
+    <script src="/Workshop-template-master/js/featherlight.min.js?1795096901"></script>
+    <script src="/Workshop-template-master/js/highlight.pack.js?1795096901"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="/Workshop-template-master/js/modernizr.custom-3.6.0.js?1795096901"></script>
+    <script src="/Workshop-template-master/js/learn.js?1795096901"></script>
+    <script src="/Workshop-template-master/js/hugo-learn.js?1795096901"></script>
+
+    <link href="/Workshop-template-master/mermaid/mermaid.css?1795096901" rel="stylesheet" />
+    <script src="/Workshop-template-master/mermaid/mermaid.js?1795096901"></script>
+    <script>
+        mermaid.initialize({ startOnLoad: true });
+    </script>
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-158079754-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+  </body>
+</html>

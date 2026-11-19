@@ -1,0 +1,2318 @@
+<!DOCTYPE html>
+<html lang="vi" class="js csstransforms3d">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="Hugo 0.111.1">
+    <meta name="description" content="">
+<meta name="author" content="journeyoftheaverageguy@gmail.com">
+
+    <link rel="icon" href="/Workshop-template-master/images/favicon.png" type="image/png">
+
+    <title>Triển khai mạng và EC2 :: Tạo mới tài khoản AWS</title>
+
+    
+    <link href="/Workshop-template-master/css/nucleus.css?1795096901" rel="stylesheet">
+    <link href="/Workshop-template-master/css/fontawesome-all.min.css?1795096901" rel="stylesheet">
+    <link href="/Workshop-template-master/css/hybrid.css?1795096901" rel="stylesheet">
+    <link href="/Workshop-template-master/css/featherlight.min.css?1795096901" rel="stylesheet">
+    <link href="/Workshop-template-master/css/perfect-scrollbar.min.css?1795096901" rel="stylesheet">
+    <link href="/Workshop-template-master/css/auto-complete.css?1795096901" rel="stylesheet">
+    <link href="/Workshop-template-master/css/atom-one-dark-reasonable.css?1795096901" rel="stylesheet">
+    <link href="/Workshop-template-master/css/theme.css?1795096901" rel="stylesheet">
+    <link href="/Workshop-template-master/css/hugo-theme.css?1795096901" rel="stylesheet">
+    
+    <link href="/Workshop-template-master/css/theme-workshop.css?1795096901" rel="stylesheet">
+    
+    
+
+    <script src="/Workshop-template-master/js/jquery-3.3.1.min.js?1795096901"></script>
+
+    <style>
+      :root #header + #content > #left > #rlblock_left{
+          display:none !important;
+      }
+      
+    </style>
+    
+  </head>
+  <body class="" data-url="/Workshop-template-master/vi/5.workshop/5.3-infrastructure-automation/">
+    <nav id="sidebar" class="showVisitedLinks">
+
+
+
+  <div id="header-wrapper">
+    <div id="header">
+      <a id="logo" href="/">
+
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 30" width="30%"><defs><style>.cls-1{fill:#fff;}.cls-2{fill:#f90;fill-rule:evenodd;}</style></defs><title>AWS-Logo_White-Color</title><path class="cls-1" d="M14.09,10.85a4.7,4.7,0,0,0,.19,1.48,7.73,7.73,0,0,0,.54,1.19.77.77,0,0,1,.12.38.64.64,0,0,1-.32.49l-1,.7a.83.83,0,0,1-.44.15.69.69,0,0,1-.49-.23,3.8,3.8,0,0,1-.6-.77q-.25-.42-.51-1a6.14,6.14,0,0,1-4.89,2.3,4.54,4.54,0,0,1-3.32-1.19,4.27,4.27,0,0,1-1.22-3.2A4.28,4.28,0,0,1,3.61,7.75,6.06,6.06,0,0,1,7.69,6.46a12.47,12.47,0,0,1,1.76.13q.92.13,1.91.36V5.73a3.65,3.65,0,0,0-.79-2.66A3.81,3.81,0,0,0,7.86,2.3a7.71,7.71,0,0,0-1.79.22,12.78,12.78,0,0,0-1.79.57,4.55,4.55,0,0,1-.58.22l-.26,0q-.35,0-.35-.52V2a1.09,1.09,0,0,1,.12-.58,1.2,1.2,0,0,1,.47-.35A10.88,10.88,0,0,1,5.77.32,10.19,10.19,0,0,1,8.36,0a6,6,0,0,1,4.35,1.35,5.49,5.49,0,0,1,1.38,4.09ZM7.34,13.38a5.36,5.36,0,0,0,1.72-.31A3.63,3.63,0,0,0,10.63,12,2.62,2.62,0,0,0,11.19,11a5.63,5.63,0,0,0,.16-1.44v-.7a14.35,14.35,0,0,0-1.53-.28,12.37,12.37,0,0,0-1.56-.1,3.84,3.84,0,0,0-2.47.67A2.34,2.34,0,0,0,5,11a2.35,2.35,0,0,0,.61,1.76A2.4,2.4,0,0,0,7.34,13.38Zm13.35,1.8a1,1,0,0,1-.64-.16,1.3,1.3,0,0,1-.35-.65L15.81,1.51a3,3,0,0,1-.15-.67.36.36,0,0,1,.41-.41H17.7a1,1,0,0,1,.65.16,1.4,1.4,0,0,1,.33.65l2.79,11,2.59-11A1.17,1.17,0,0,1,24.39.6a1.1,1.1,0,0,1,.67-.16H26.4a1.1,1.1,0,0,1,.67.16,1.17,1.17,0,0,1,.32.65L30,12.39,32.88,1.25A1.39,1.39,0,0,1,33.22.6a1,1,0,0,1,.65-.16h1.54a.36.36,0,0,1,.41.41,1.36,1.36,0,0,1,0,.26,3.64,3.64,0,0,1-.12.41l-4,12.86a1.3,1.3,0,0,1-.35.65,1,1,0,0,1-.64.16H29.25a1,1,0,0,1-.67-.17,1.26,1.26,0,0,1-.32-.67L25.67,3.64,23.11,14.34a1.26,1.26,0,0,1-.32.67,1,1,0,0,1-.67.17Zm21.36.44a11.28,11.28,0,0,1-2.56-.29,7.44,7.44,0,0,1-1.92-.67,1,1,0,0,1-.61-.93v-.84q0-.52.38-.52a.9.9,0,0,1,.31.06l.42.17a8.77,8.77,0,0,0,1.83.58,9.78,9.78,0,0,0,2,.2,4.48,4.48,0,0,0,2.43-.55,1.76,1.76,0,0,0,.86-1.57,1.61,1.61,0,0,0-.45-1.16A4.29,4.29,0,0,0,43,9.22l-2.41-.76A5.15,5.15,0,0,1,38,6.78a3.94,3.94,0,0,1-.83-2.41,3.7,3.7,0,0,1,.45-1.85,4.47,4.47,0,0,1,1.19-1.37A5.27,5.27,0,0,1,40.51.29,7.4,7.4,0,0,1,42.6,0a8.87,8.87,0,0,1,1.12.07q.57.07,1.08.19t.95.26a4.27,4.27,0,0,1,.7.29,1.59,1.59,0,0,1,.49.41.94.94,0,0,1,.15.55v.79q0,.52-.38.52a1.76,1.76,0,0,1-.64-.2,7.74,7.74,0,0,0-3.2-.64,4.37,4.37,0,0,0-2.21.47,1.6,1.6,0,0,0-.79,1.48,1.58,1.58,0,0,0,.49,1.18,4.94,4.94,0,0,0,1.83.92L44.55,7a5.08,5.08,0,0,1,2.57,1.6A3.76,3.76,0,0,1,47.9,11a4.21,4.21,0,0,1-.44,1.93,4.4,4.4,0,0,1-1.21,1.47,5.43,5.43,0,0,1-1.85.93A8.25,8.25,0,0,1,42.05,15.62Z"></path><path class="cls-2" d="M45.19,23.81C39.72,27.85,31.78,30,25,30A36.64,36.64,0,0,1,.22,20.57c-.51-.46-.06-1.09.56-.74A49.78,49.78,0,0,0,25.53,26.4,49.23,49.23,0,0,0,44.4,22.53C45.32,22.14,46.1,23.14,45.19,23.81Z"></path><path class="cls-2" d="M47.47,21.21c-.7-.9-4.63-.42-6.39-.21-.53.06-.62-.4-.14-.74,3.13-2.2,8.27-1.57,8.86-.83s-.16,5.89-3.09,8.35c-.45.38-.88.18-.68-.32C46.69,25.8,48.17,22.11,47.47,21.21Z"></path></svg>
+
+</a>
+
+    </div>
+    
+        <div class="searchbox">
+    <label for="search-by"><i class="fas fa-search"></i></label>
+    <input data-search-input id="search-by" type="search" placeholder="Search...">
+    <span data-search-clear=""><i class="fas fa-times"></i></span>
+</div>
+
+<script type="text/javascript" src="/Workshop-template-master/js/lunr.min.js?1795096901"></script>
+<script type="text/javascript" src="/Workshop-template-master/js/auto-complete.js?1795096901"></script>
+<script type="text/javascript">
+    
+        var baseurl = "https:\/\/nguyenthanhduongmd-bot.github.io\/Workshop-template-master\/\/vi";
+    
+</script>
+<script type="text/javascript" src="/Workshop-template-master/js/search.js?1795096901"></script>
+
+    
+  </div>
+
+    <div class="highlightable">
+    <ul class="topics">
+
+        
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/Workshop-template-master/vi/1.worklogs/" title="" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/Workshop-template-master/vi/1.worklogs/">
+           <b> 1.Worklog</b> 
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/Workshop-template-master/vi/1.worklogs/1.1-worklog-week-1/" title="" class="dd-item ">
+        <a href="/Workshop-template-master/vi/1.worklogs/1.1-worklog-week-1/">
+         <b> 1.1 Nhật ký làm việc tuần 1 </b> 
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/Workshop-template-master/vi/1.worklogs/1.2-worklog-week-2/" title="" class="dd-item ">
+        <a href="/Workshop-template-master/vi/1.worklogs/1.2-worklog-week-2/">
+         <b> 1.2 Nhật ký làm việc tuần 2 </b> 
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/Workshop-template-master/vi/1.worklogs/1.3-worklog-week-3/" title="" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/Workshop-template-master/vi/1.worklogs/1.3-worklog-week-3/">
+           <b> 1.3 Nhật ký làm việc tuần 3 </b> 
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/Workshop-template-master/vi/1.worklogs/1.4-worklog-week-4/" title="" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/Workshop-template-master/vi/1.worklogs/1.4-worklog-week-4/">
+           <b> 1.4 Nhật ký làm việc tuần 4 </b> 
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/Workshop-template-master/vi/1.worklogs/1.5-worklog-week-5/" title="" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/Workshop-template-master/vi/1.worklogs/1.5-worklog-week-5/">
+           <b> 1.5 Nhật ký làm việc tuần 5 </b> 
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/Workshop-template-master/vi/1.worklogs/1.6-worklog-week-6/" title="" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/Workshop-template-master/vi/1.worklogs/1.6-worklog-week-6/">
+           <b> 1.6 Nhật ký làm việc tuần 6 </b> 
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/Workshop-template-master/vi/1.worklogs/1.7-worklog-week-7/" title="" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/Workshop-template-master/vi/1.worklogs/1.7-worklog-week-7/">
+           <b> 1.7 Nhật ký làm việc tuần 7 </b> 
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/Workshop-template-master/vi/1.worklogs/1.8-worklog-week-8/" title="" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/Workshop-template-master/vi/1.worklogs/1.8-worklog-week-8/">
+           <b> 1.8 Nhật ký làm việc tuần 8 </b> 
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/Workshop-template-master/vi/1.worklogs/1.9-worklog-week-9/" title="" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/Workshop-template-master/vi/1.worklogs/1.9-worklog-week-9/">
+           <b> 1.9 Nhật ký làm việc tuần 9 </b> 
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/Workshop-template-master/vi/1.worklogs/1.10-worklog-week-10/" title="" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/Workshop-template-master/vi/1.worklogs/1.10-worklog-week-10/">
+           <b> 1.10 Nhật ký làm việc tuần 10 </b> 
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/Workshop-template-master/vi/1.worklogs/1.11-worklog-week-11/" title="" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/Workshop-template-master/vi/1.worklogs/1.11-worklog-week-11/">
+           <b> 1.11 Nhật ký làm việc tuần 11 </b> 
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/Workshop-template-master/vi/1.worklogs/1.12-worklog-week-12/" title="" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/Workshop-template-master/vi/1.worklogs/1.12-worklog-week-12/">
+           <b> 1.12 Nhật ký làm việc tuần 12 </b> 
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/Workshop-template-master/vi/2.proposal/" title="" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/Workshop-template-master/vi/2.proposal/">
+           <b> 2. Bản đề xuất </b> 
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/Workshop-template-master/vi/3.blogs-posted/" title="" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/Workshop-template-master/vi/3.blogs-posted/">
+           <b> 3.Các bài blogs đã đăng </b> 
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/Workshop-template-master/vi/4.meetup-events-attended/" title="Hỗ trợ Xác thực Tài khoản" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/Workshop-template-master/vi/4.meetup-events-attended/">
+           <b> 4. </b> Hỗ trợ Xác thực Tài khoản
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/Workshop-template-master/vi/5.workshop/" title="" class="dd-item 
+        parent
+        
+        
+        ">
+      <a href="/Workshop-template-master/vi/5.workshop/">
+          <b>5. Workshop </b>
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/Workshop-template-master/vi/5.workshop/5.1-overview/" title="Tổng quan" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/Workshop-template-master/vi/5.workshop/5.1-overview/">
+          <b>5.1. </b>Tổng quan
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/Workshop-template-master/vi/5.workshop/5.2-prerequisites/" title="5.2. Chuẩn bị" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/Workshop-template-master/vi/5.workshop/5.2-prerequisites/">
+          <b>5.2. </b>5.2. Chuẩn bị
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/Workshop-template-master/vi/5.workshop/5.3-infrastructure-automation/" title="Triển khai mạng và EC2" class="dd-item 
+        
+        active
+        
+        ">
+      <a href="/Workshop-template-master/vi/5.workshop/5.3-infrastructure-automation/">
+          <b>5.3. </b>Triển khai mạng và EC2
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/Workshop-template-master/vi/5.workshop/5.4-deployment/" title="Cấu hình giám sát" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/Workshop-template-master/vi/5.workshop/5.4-deployment/">
+          <b>5.4. </b>Cấu hình giám sát
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/Workshop-template-master/vi/5.workshop/5.5-system-testing/" title="Kiểm thử và xác minh hệ thống giám sát" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/Workshop-template-master/vi/5.workshop/5.5-system-testing/">
+          <b>5.5. </b>Kiểm thử và xác minh hệ thống giám sát
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/Workshop-template-master/vi/5.workshop/5.6-dashboards-and-data-analysis/" title="Dashboard và phân tích nhật ký mạng" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/Workshop-template-master/vi/5.workshop/5.6-dashboards-and-data-analysis/">
+          <b>5.6. </b>Dashboard và phân tích nhật ký mạng
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/Workshop-template-master/vi/5.workshop/5.7-troubleshooting/" title="Xử lý lỗi trong hệ thống giám sát" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/Workshop-template-master/vi/5.workshop/5.7-troubleshooting/">
+          <b>5.7. </b>Xử lý lỗi trong hệ thống giám sát
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/Workshop-template-master/vi/5.workshop/5.8-evaluation-and-evidence/" title="Tổng hợp và đánh giá kết quả" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/Workshop-template-master/vi/5.workshop/5.8-evaluation-and-evidence/">
+          <b>5.8. </b>Tổng hợp và đánh giá kết quả
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/Workshop-template-master/vi/5.workshop/5.9-resource-cleanup/" title="Dọn dẹp tài nguyên" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/Workshop-template-master/vi/5.workshop/5.9-resource-cleanup/">
+          <b>5.9. </b>Dọn dẹp tài nguyên
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/Workshop-template-master/vi/6.-self-evaluation/" title="Tự đánh giá" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/Workshop-template-master/vi/6.-self-evaluation/">
+          <b>6. </b>Tự đánh giá
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/Workshop-template-master/vi/7.-sharing-and-feedback/" title="Chia sẻ và đóng góp ý kiến" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/Workshop-template-master/vi/7.-sharing-and-feedback/">
+          <b>7. </b>Chia sẻ và đóng góp ý kiến
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+         
+    </ul>
+
+    
+    
+      <section id="shortcuts">
+        <h3>More</h3>
+        <ul>
+          
+              <li> 
+                  <a class="padding" href="http://awsstudygroup.com"><i class='fab fa-aws'></i> AWS Study Group - Blog</a>
+              </li>
+          
+              <li> 
+                  <a class="padding" href="https://www.facebook.com/groups/awsstudygroupfcj"><i class='fab fa-facebook'></i> AWS Study Group - Nhóm FB</a>
+              </li>
+          
+        </ul>
+      </section>
+    
+
+    
+    <section id="prefooter">
+      <hr/>
+      <ul>
+      
+        <li>
+          <a class="padding">
+            <i class="fas fa-language fa-fw"></i>
+          <div class="select-style">
+            <select id="select-language" onchange="location = this.value;">
+          
+          
+          
+              
+              
+                  
+                    
+                    
+                      <option id="en" value="https://nguyenthanhduongmd-bot.github.io/Workshop-template-master/5.workshop/5.3-infrastructure-automation/">English</option>
+                    
+                  
+              
+                  
+              
+          
+              
+              
+                  
+              
+                  
+                    
+                    
+                      <option id="vi" value="https://nguyenthanhduongmd-bot.github.io/Workshop-template-master/vi/5.workshop/5.3-infrastructure-automation/" selected>Tiếng Việt</option>
+                    
+                  
+              
+          
+        </select>
+        <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+          width="255px" height="255px" viewBox="0 0 255 255" style="enable-background:new 0 0 255 255;" xml:space="preserve">
+          <g>
+            <g id="arrow-drop-down">
+              <polygon points="0,63.75 127.5,191.25 255,63.75 		" />
+            </g>
+          </g>
+        </svg>
+        </div>
+        </a>
+        </li>
+      
+      
+      
+        <li><a class="padding" href="#" data-clear-history-toggle=""><i class="fas fa-history fa-fw"></i> Clear History</a></li>
+      
+      </ul>
+    </section>
+    
+    <section id="footer">
+      <left>
+    
+     <b> Workshop</b> <br>
+    <img src="https://hitwebcounter.com/counter/counter.php?page=7830891&style=0038&nbdigits=9&type=page&initCount=0" title="Migrate" Alt="web counter"   border="0" /></a>  <br>
+     <b> <a href="https://cloudjourney.awsstudygroup.com/">Cloud Journey</a></b> <br>
+    <img src="https://hitwebcounter.com/counter/counter.php?page=7830807&style=0038&nbdigits=9&type=page&initCount=0" title="Total CLoud Journey" Alt="web counter"   border="0"   />
+     
+</left>
+<left>
+    <br>
+    <br>
+        <b> Last Updated </b> <br>
+        <i><font color=orange>26-11-2023</font></i>
+    </left>
+    <left>
+        <br>
+        <br>
+            <b> Team </b> <br>
+           
+            <i>
+                <a href="https://www.linkedin.com/in/jotaguy"  style="color:orange">Gia Hưng</a>
+        </i>
+        </left>
+
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+
+    </section>
+  </div>
+</nav>
+
+
+
+
+        <section id="body">
+        <div id="overlay"></div>
+        <div class="padding highlightable">
+              
+              <div>
+                <div id="top-bar">
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fas fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
+                  
+                  <span class="links">
+                 
+                 
+                    
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/Workshop-template-master/vi/'></a> > <a href='/Workshop-template-master/vi/5.workshop/'></a> > Triển khai mạng và EC2
+          
+        
+          
+        
+          
+        
+                 
+                  </span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#1-mục-tiêu">1. Mục tiêu</a></li>
+    <li><a href="#2-cấu-hình-sử-dụng">2. Cấu hình sử dụng</a></li>
+    <li><a href="#3-tạo-vpc-và-subnet">3. Tạo VPC và subnet</a></li>
+    <li><a href="#4-kiểm-tra-public-subnet">4. Kiểm tra public subnet</a></li>
+    <li><a href="#5-kiểm-tra-route-table">5. Kiểm tra route table</a>
+      <ul>
+        <li><a href="#51-public-route-table">5.1. Public route table</a></li>
+        <li><a href="#52-private-route-table">5.2. Private route table</a></li>
+      </ul>
+    </li>
+    <li><a href="#6-tạo-security-group">6. Tạo Security Group</a>
+      <ul>
+        <li><a href="#61-nhập-thông-tin-security-group">6.1. Nhập thông tin Security Group</a></li>
+        <li><a href="#62-cấu-hình-inbound-rule">6.2. Cấu hình inbound rule</a></li>
+        <li><a href="#63-kiểm-tra-outbound-và-lưu">6.3. Kiểm tra outbound và lưu</a></li>
+      </ul>
+    </li>
+    <li><a href="#7-cấu-hình-ec2">7. Cấu hình EC2</a>
+      <ul>
+        <li><a href="#71-chọn-ami-và-instance-type">7.1. Chọn AMI và instance type</a></li>
+        <li><a href="#72-cấu-hình-network-settings">7.2. Cấu hình Network settings</a></li>
+        <li><a href="#73-cấu-hình-storage">7.3. Cấu hình storage</a></li>
+        <li><a href="#74-bật-mã-hóa-root-volume">7.4. Bật mã hóa root volume</a></li>
+      </ul>
+    </li>
+    <li><a href="#8-cài-nginx-tự-động-bằng-user-data">8. Cài Nginx tự động bằng User data</a>
+      <ul>
+        <li><a href="#81-mở-advanced-details">8.1. Mở Advanced details</a></li>
+        <li><a href="#82-nhập-script">8.2. Nhập script</a></li>
+      </ul>
+    </li>
+    <li><a href="#9-launch-và-kiểm-tra-ec2">9. Launch và kiểm tra EC2</a>
+      <ul>
+        <li><a href="#91-kiểm-tra-trước-khi-launch">9.1. Kiểm tra trước khi launch</a></li>
+        <li><a href="#92-kiểm-tra-sau-khi-launch">9.2. Kiểm tra sau khi launch</a></li>
+      </ul>
+    </li>
+    <li><a href="#10-đối-chiếu-minh-chứng">10. Đối chiếu minh chứng</a>
+      <ul>
+        <li><a href="#101-các-ảnh-đã-có">10.1. Các ảnh đã có</a></li>
+        <li><a href="#102-các-ảnh-cần-bổ-sung">10.2. Các ảnh cần bổ sung</a></li>
+      </ul>
+    </li>
+    <li><a href="#11-kiểm-tra-hoàn-thành">11. Kiểm tra hoàn thành</a></li>
+    <li><a href="#tài-liệu-tham-khảo">Tài liệu tham khảo</a></li>
+  </ul>
+</nav>
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
+        <div id="head-tags">
+        
+        </div>
+        
+        <div id="body-inner">
+          
+            <h1>
+              
+              Triển khai mạng và EC2
+            </h1>
+          
+
+        
+
+
+
+	<h2 id="1-mục-tiêu">1. Mục tiêu</h2>
+<p>Phần này hướng dẫn tạo hạ tầng mạng và cấu hình EC2 để tự động cài đặt Nginx bằng User data.</p>
+<p>Các công việc gồm:</p>
+<ol>
+<li>Tạo VPC, public subnet và private subnet.</li>
+<li>Kiểm tra route table và Internet Gateway.</li>
+<li>Tạo Security Group cho phép HTTP từ IP máy thực hành.</li>
+<li>Cấu hình EC2 và mã hóa ổ đĩa EBS.</li>
+<li>Nhập User data để tự động cài đặt Nginx.</li>
+<li>Khởi tạo EC2 và ghi lại thông tin phục vụ giám sát.</li>
+</ol>
+<p>Lần triển khai trong các ảnh sử dụng <strong>United States (N. Virginia) — us-east-1</strong>. Ảnh cấu hình EC2 hiển thị AMI <strong>Canonical Ubuntu 26.04</strong>.</p>
+<blockquote>
+<p><strong>Thống nhất Region:</strong> Nếu tiếp tục triển khai theo các ảnh này, cập nhật Region trong phần 5.1, 5.2 và cấu hình giám sát ở phần 5.4 thành <code>us-east-1</code>. Các điều kiện <code>aws:RequestedRegion</code> và ARN có chứa Region trong policy cũng cần được điều chỉnh tương ứng. Việc sửa Markdown không thay đổi tài nguyên hoặc quyền trên AWS.</p>
+</blockquote>
+<h2 id="2-cấu-hình-sử-dụng">2. Cấu hình sử dụng</h2>
+<table>
+<thead>
+<tr>
+<th>Thành phần</th>
+<th>Cấu hình</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Region</td>
+<td><code>us-east-1</code></td>
+</tr>
+<tr>
+<td>Tiền tố tên tài nguyên</td>
+<td><code>aws-network-workshop</code></td>
+</tr>
+<tr>
+<td>VPC CIDR dự kiến</td>
+<td><code>10.10.0.0/16</code></td>
+</tr>
+<tr>
+<td>Public subnet</td>
+<td><code>10.10.1.0/24</code></td>
+</tr>
+<tr>
+<td>Private subnet dự kiến</td>
+<td><code>10.10.2.0/24</code></td>
+</tr>
+<tr>
+<td>EC2</td>
+<td><code>aws-network-workshop-web</code></td>
+</tr>
+<tr>
+<td>Instance type</td>
+<td><code>t3.micro</code></td>
+</tr>
+<tr>
+<td>Number of instances</td>
+<td><code>1</code></td>
+</tr>
+<tr>
+<td>Security Group</td>
+<td><code>aws-network-workshop-web-sg</code></td>
+</tr>
+<tr>
+<td>Root volume</td>
+<td><code>8 GiB</code>, loại <code>gp3</code></td>
+</tr>
+<tr>
+<td>Mã hóa root volume</td>
+<td>Bật trước khi launch</td>
+</tr>
+<tr>
+<td>NAT Gateway</td>
+<td>Không tạo</td>
+</tr>
+</tbody>
+</table>
+<h2 id="3-tạo-vpc-và-subnet">3. Tạo VPC và subnet</h2>
+<p>Nếu VPC workshop đã được tạo đúng cấu hình, mở lại để kiểm tra và tiếp tục sang mục 4.</p>
+<ol>
+<li>Mở dịch vụ <strong>VPC</strong>.</li>
+<li>Kiểm tra Region đang là <strong>United States (N. Virginia)</strong>.</li>
+<li>Chọn <strong>Create VPC</strong>.</li>
+<li>Trong <strong>Resources to create</strong>, chọn <strong>VPC and more</strong>.</li>
+<li>Bật <strong>Name tag auto-generation</strong> và nhập tiền tố <code>aws-network-workshop</code>.</li>
+<li>Cấu hình theo bảng:</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>Trường</th>
+<th>Giá trị</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>IPv4 CIDR block</td>
+<td><code>10.10.0.0/16</code></td>
+</tr>
+<tr>
+<td>IPv6 CIDR block</td>
+<td>Không sử dụng</td>
+</tr>
+<tr>
+<td>Tenancy</td>
+<td><code>Default</code></td>
+</tr>
+<tr>
+<td>Number of Availability Zones</td>
+<td><code>1</code></td>
+</tr>
+<tr>
+<td>Number of public subnets</td>
+<td><code>1</code></td>
+</tr>
+<tr>
+<td>Number of private subnets</td>
+<td><code>1</code></td>
+</tr>
+<tr>
+<td>NAT gateways</td>
+<td><code>None</code></td>
+</tr>
+<tr>
+<td>VPC endpoints</td>
+<td><code>None</code></td>
+</tr>
+<tr>
+<td>Enable DNS resolution</td>
+<td>Bật</td>
+</tr>
+<tr>
+<td>Enable DNS hostnames</td>
+<td>Bật</td>
+</tr>
+</tbody>
+</table>
+<ol start="7">
+<li>Tại khu vực cấu hình subnet, mở <strong>Customize subnets CIDR blocks</strong>.</li>
+<li>Nhập:</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>Subnet</th>
+<th>IPv4 CIDR</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Public subnet</td>
+<td><code>10.10.1.0/24</code></td>
+</tr>
+<tr>
+<td>Private subnet</td>
+<td><code>10.10.2.0/24</code></td>
+</tr>
+</tbody>
+</table>
+<ol start="9">
+<li>Kiểm tra phần <strong>Preview</strong>.</li>
+<li>Chọn <strong>Create VPC</strong> và chờ hoàn tất.</li>
+</ol>
+<p>Public subnet được sử dụng để đặt EC2 chạy Nginx. Private subnet minh họa việc phân tách mạng và chưa chứa EC2 trong bài thực hành này.</p>
+<h2 id="4-kiểm-tra-public-subnet">4. Kiểm tra public subnet</h2>
+<ol>
+<li>Mở <strong>VPC → Subnets</strong>.</li>
+<li>Chọn public subnet của workshop.</li>
+<li>Kiểm tra CIDR, trạng thái, Availability Zone, VPC và route table.</li>
+</ol>
+<p><img src="/images/2/01-vpc-create.png" alt="Hình ảnh"></p>
+<p>Trong ảnh có thể xác nhận:</p>
+<table>
+<thead>
+<tr>
+<th>Thông tin</th>
+<th>Giá trị hiển thị</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>IPv4 CIDR</td>
+<td><code>10.10.1.0/24</code></td>
+</tr>
+<tr>
+<td>State</td>
+<td><code>Available</code></td>
+</tr>
+<tr>
+<td>Availability Zone</td>
+<td><code>us-east-1a</code></td>
+</tr>
+<tr>
+<td>VPC</td>
+<td><code>aws-network-workshop-vpc</code></td>
+</tr>
+<tr>
+<td>Route table</td>
+<td><code>aws-network-workshop-rtb-public</code></td>
+</tr>
+<tr>
+<td>Auto-assign public IPv4 address</td>
+<td><code>No</code></td>
+</tr>
+</tbody>
+</table>
+<p>Ghi lại <strong>VPC ID</strong> và <strong>Public subnet ID</strong> để sử dụng khi tạo EC2.</p>
+<p>Mục <strong>Auto-assign public IPv4 address</strong> đang là <strong>No</strong>. Khi tạo EC2, chọn <strong>Auto-assign public IP → Enable</strong> để cấp public IPv4 cho instance.</p>
+<p>Ảnh này thể hiện thông tin subnet và liên kết tới route table. Các route bên trong bảng định tuyến được kiểm tra ở mục tiếp theo.</p>
+<h2 id="5-kiểm-tra-route-table">5. Kiểm tra route table</h2>
+<h3 id="51-public-route-table">5.1. Public route table</h3>
+<ol>
+<li>Từ trang thông tin subnet ở ảnh 1, tìm mục <strong>Route table</strong>.</li>
+<li>Nhấn liên kết màu xanh của <code>aws-network-workshop-rtb-public</code>.</li>
+<li>Mở tab <strong>Routes</strong>.</li>
+<li>Đối chiếu các route cần có:</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>Destination</th>
+<th>Target</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>10.10.0.0/16</code></td>
+<td><code>local</code></td>
+</tr>
+<tr>
+<td><code>0.0.0.0/0</code></td>
+<td>Internet Gateway có ID bắt đầu bằng <code>igw-</code></td>
+</tr>
+</tbody>
+</table>
+<p><code>igw-...</code> là ký hiệu minh họa. Trên AWS Console cần chọn đúng Internet Gateway thuộc VPC workshop.</p>
+<p>Nếu thiếu default route:</p>
+<ol>
+<li>Chọn <strong>Edit routes</strong>.</li>
+<li>Chọn <strong>Add route</strong>.</li>
+<li>Nhập <strong>Destination</strong> là <code>0.0.0.0/0</code>.</li>
+<li>Trong <strong>Target</strong>, chọn <strong>Internet Gateway</strong>.</li>
+<li>Chọn Internet Gateway của VPC workshop.</li>
+<li>Nhấn <strong>Save changes</strong>.</li>
+</ol>
+<p>Mở tab <strong>Subnet associations</strong> để kiểm tra public subnet sử dụng đúng bảng định tuyến.</p>
+<p><img src="/images/2/nnl.png" alt="Hình ảnh"></p>
+<h3 id="52-private-route-table">5.2. Private route table</h3>
+<ol>
+<li>Mở <strong>VPC → Subnets</strong>.</li>
+<li>Chọn private subnet có CIDR <code>10.10.2.0/24</code>.</li>
+<li>Mở tab <strong>Route table</strong>.</li>
+<li>Kiểm tra route nội bộ:</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>Destination</th>
+<th>Target</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>10.10.0.0/16</code></td>
+<td><code>local</code></td>
+</tr>
+</tbody>
+</table>
+<p>Theo cấu hình của bài, private subnet không có default route tới Internet Gateway hoặc NAT Gateway.</p>
+<h2 id="6-tạo-security-group">6. Tạo Security Group</h2>
+<h3 id="61-nhập-thông-tin-security-group">6.1. Nhập thông tin Security Group</h3>
+<ol>
+<li>Mở <strong>EC2 → Security Groups</strong>.</li>
+<li>Chọn <strong>Create security group</strong>.</li>
+<li>Điền:</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>Trường</th>
+<th>Giá trị</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Security group name</td>
+<td><code>aws-network-workshop-web-sg</code></td>
+</tr>
+<tr>
+<td>Description</td>
+<td><code>HTTP access from workshop client</code></td>
+</tr>
+<tr>
+<td>VPC</td>
+<td>VPC workshop</td>
+</tr>
+</tbody>
+</table>
+<h3 id="62-cấu-hình-inbound-rule">6.2. Cấu hình inbound rule</h3>
+<p>Trong <strong>Inbound rules</strong>, chọn <strong>Add rule</strong> và đặt <strong>Type → HTTP</strong>.</p>
+<p><img src="/images/2/1.png" alt="Hình ảnh"></p>
+<p>Trong ảnh:</p>
+<ul>
+<li>Type đã chọn <strong>HTTP</strong>.</li>
+<li>Protocol là <strong>TCP</strong>.</li>
+<li>Port range là <strong>80</strong>.</li>
+<li>Source type đang là <strong>Custom</strong>.</li>
+<li>Ô Source chưa được điền.</li>
+</ul>
+<p>Hoàn thiện nguồn truy cập như sau:</p>
+<ol>
+<li>Nhấn ra vùng trống để đóng danh sách gợi ý đang mở trong ô <strong>Source</strong>.</li>
+<li>Nhấn mũi tên tại ô <strong>Source type</strong>, đang hiển thị <strong>Custom</strong>.</li>
+<li>Chọn <strong>My IP</strong>.</li>
+<li>Kiểm tra AWS tự điền IP công cộng của máy thực hành, dạng <code>x.x.x.x/32</code>.</li>
+</ol>
+<p>Rule inbound cần lưu:</p>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Protocol</th>
+<th>Port range</th>
+<th>Source</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>HTTP</td>
+<td>TCP</td>
+<td><code>80</code></td>
+<td>IP công cộng của máy thực hành <code>/32</code></td>
+</tr>
+</tbody>
+</table>
+<p>Giữ cổng <strong>8080 chưa được cho phép</strong> để tạo lưu lượng REJECT ở phần kiểm thử. Bài này chưa cần rule SSH cổng 22.</p>
+<h3 id="63-kiểm-tra-outbound-và-lưu">6.3. Kiểm tra outbound và lưu</h3>
+<ol>
+<li>Kiểm tra outbound IPv4 cho phép <strong>All traffic → <code>0.0.0.0/0</code></strong> để EC2 tải gói cài đặt.</li>
+<li>Chọn <strong>Create security group</strong>.</li>
+<li>Mở lại Security Group vừa tạo.</li>
+<li>Trong tab <strong>Inbound rules</strong>, xác nhận rule HTTP 80 có Source là IP máy thực hành <code>/32</code>.</li>
+<li>Ghi lại Source IP để đối chiếu Flow Logs ở phần sau.</li>
+</ol>
+<h2 id="7-cấu-hình-ec2">7. Cấu hình EC2</h2>
+<h3 id="71-chọn-ami-và-instance-type">7.1. Chọn AMI và instance type</h3>
+<ol>
+<li>Mở <strong>EC2 → Instances → Launch instances</strong>.</li>
+<li>Cấu hình:</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>Mục</th>
+<th>Giá trị</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Name</td>
+<td><code>aws-network-workshop-web</code></td>
+</tr>
+<tr>
+<td>AMI theo ảnh thực hành</td>
+<td>Canonical Ubuntu <code>26.04</code></td>
+</tr>
+<tr>
+<td>Architecture</td>
+<td><code>amd64 / x86_64</code></td>
+</tr>
+<tr>
+<td>Instance type</td>
+<td><code>t3.micro</code></td>
+</tr>
+<tr>
+<td>Key pair</td>
+<td><code>Proceed without a key pair</code></td>
+</tr>
+<tr>
+<td>Number of instances</td>
+<td><code>1</code></td>
+</tr>
+</tbody>
+</table>
+<p>Ô <strong>Number of instances</strong> nằm trong khung <strong>Summary</strong> ở bên phải trang launch.</p>
+<h3 id="72-cấu-hình-network-settings">7.2. Cấu hình Network settings</h3>
+<p>Trong <strong>Network settings</strong>, nhấn <strong>Edit</strong> và chọn:</p>
+<table>
+<thead>
+<tr>
+<th>Mục</th>
+<th>Giá trị</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>VPC</td>
+<td>VPC workshop</td>
+</tr>
+<tr>
+<td>Subnet</td>
+<td>Public subnet <code>10.10.1.0/24</code></td>
+</tr>
+<tr>
+<td>Auto-assign public IP</td>
+<td><code>Enable</code></td>
+</tr>
+<tr>
+<td>Firewall</td>
+<td><code>Select existing security group</code></td>
+</tr>
+<tr>
+<td>Security Group</td>
+<td><code>aws-network-workshop-web-sg</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="73-cấu-hình-storage">7.3. Cấu hình storage</h3>
+<p><img src="/images/2/3.png" alt="Hình ảnh"></p>
+<p>Trong ảnh có thể xác nhận:</p>
+<table>
+<thead>
+<tr>
+<th>Thông tin</th>
+<th>Giá trị hiển thị</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Region</td>
+<td>United States (N. Virginia)</td>
+</tr>
+<tr>
+<td>AMI</td>
+<td>Canonical Ubuntu <code>26.04</code></td>
+</tr>
+<tr>
+<td>Instance type</td>
+<td><code>t3.micro</code></td>
+</tr>
+<tr>
+<td>Number of instances</td>
+<td><code>1</code></td>
+</tr>
+<tr>
+<td>Security Group</td>
+<td><code>aws-network-workshop-web-sg</code></td>
+</tr>
+<tr>
+<td>Root volume</td>
+<td><code>8 GiB</code></td>
+</tr>
+<tr>
+<td>Volume type</td>
+<td><code>gp3</code></td>
+</tr>
+<tr>
+<td>Encryption</td>
+<td><code>Not encrypted</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="74-bật-mã-hóa-root-volume">7.4. Bật mã hóa root volume</h3>
+<p>Thực hiện trước khi launch:</p>
+<ol>
+<li>Trong khung <strong>Configure storage</strong>, nhấn <strong>Advanced</strong> màu xanh ở góc trên bên phải.</li>
+<li>Mở phần cấu hình root volume nếu đang thu gọn.</li>
+<li>Tìm mục <strong>Encrypted</strong> hoặc <strong>Encryption</strong>.</li>
+<li>Chuyển từ <strong>Not encrypted</strong> sang <strong>Encrypted / Yes</strong>.</li>
+<li>Nếu được yêu cầu chọn khóa KMS, sử dụng khóa EBS mặc định <code>aws/ebs</code>.</li>
+<li>Kiểm tra <strong>Delete on termination</strong> đã bật.</li>
+<li>Xác nhận cấu hình cuối hiển thị <strong>Encrypted</strong>.</li>
+</ol>
+<blockquote>
+<p>Ảnh 3 ghi nhận thời điểm ổ đĩa chưa mã hóa. Cần chụp thêm ảnh sau khi bật Encrypted để minh chứng cấu hình cuối.</p>
+</blockquote>
+<p>Nếu thay đổi AMI, kiểm tra lại các thiết lập mạng và storage trước khi launch.</p>
+<p><img src="/images/2/2.png" alt="Hình ảnh"></p>
+<h2 id="8-cài-nginx-tự-động-bằng-user-data">8. Cài Nginx tự động bằng User data</h2>
+<h3 id="81-mở-advanced-details">8.1. Mở Advanced details</h3>
+<p>Kéo xuống và mở <strong>Advanced details</strong>.</p>
+<p>Cấu hình:</p>
+<table>
+<thead>
+<tr>
+<th>Mục</th>
+<th>Giá trị</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>IAM instance profile</td>
+<td>Để trống</td>
+</tr>
+<tr>
+<td>Detailed CloudWatch monitoring</td>
+<td>Giữ tắt, sử dụng basic monitoring</td>
+</tr>
+<tr>
+<td>Metadata version</td>
+<td><code>V2 only / token required</code> nếu hiển thị</td>
+</tr>
+</tbody>
+</table>
+<p>Role <code>workshop-flowlogs-role</code> được cấu hình cho Flow Log ở phần 5.4.</p>
+<h3 id="82-nhập-script">8.2. Nhập script</h3>
+<p>Trong ô <strong>User data</strong>, dán toàn bộ script sau:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#!/bin/bash
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>set -euxo pipefail
+</span></span><span style="display:flex;"><span>export DEBIAN_FRONTEND<span style="color:#f92672">=</span>noninteractive
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>apt-get -o Acquire::Retries<span style="color:#f92672">=</span><span style="color:#ae81ff">3</span> update
+</span></span><span style="display:flex;"><span>apt-get -o Acquire::Retries<span style="color:#f92672">=</span><span style="color:#ae81ff">3</span> -o DPkg::Lock::Timeout<span style="color:#f92672">=</span><span style="color:#ae81ff">120</span> install -y nginx
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>cat &gt; /var/www/html/index.html <span style="color:#e6db74">&lt;&lt;&#39;HTML&#39;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">&lt;!DOCTYPE html&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">&lt;html lang=&#34;en&#34;&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">&lt;head&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  &lt;meta charset=&#34;UTF-8&#34;&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  &lt;title&gt;AWS Network Workshop&lt;/title&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">&lt;/head&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">&lt;body&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  &lt;h1&gt;AWS Network Workshop&lt;/h1&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  &lt;p&gt;Nginx is running.&lt;/p&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">&lt;/body&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">&lt;/html&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">HTML</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>systemctl enable --now nginx
+</span></span></code></pre></div><p>Script thực hiện:</p>
+<ol>
+<li>Cập nhật danh sách gói.</li>
+<li>Cài đặt Nginx.</li>
+<li>Tạo trang HTML phục vụ kiểm thử.</li>
+<li>Bật dịch vụ Nginx.</li>
+</ol>
+<p>Để ô <strong>User data has already been base64 encoded</strong> ở trạng thái <strong>chưa chọn</strong>.</p>
+<p>Nhập User data trước khi launch. Kết quả cài đặt và khả năng truy cập website cần được kiểm tra ở phần 5.5.</p>
+<h2 id="9-launch-và-kiểm-tra-ec2">9. Launch và kiểm tra EC2</h2>
+<h3 id="91-kiểm-tra-trước-khi-launch">9.1. Kiểm tra trước khi launch</h3>
+<p>Đối chiếu:</p>
+<ul>
+<li>Number of instances là <code>1</code>.</li>
+<li>Đã chọn đúng AMI và instance type <code>t3.micro</code>.</li>
+<li>EC2 nằm trong public subnet.</li>
+<li>Auto-assign public IP đã bật.</li>
+<li>Đã chọn đúng Security Group.</li>
+<li>Root volume là <code>8 GiB</code>, loại <code>gp3</code>.</li>
+<li>Root volume đã bật mã hóa.</li>
+<li>Đã nhập đầy đủ User data.</li>
+</ul>
+<p>Sau đó nhấn <strong>Launch instance</strong>.</p>
+<h3 id="92-kiểm-tra-sau-khi-launch">9.2. Kiểm tra sau khi launch</h3>
+<ol>
+<li>Chọn <strong>View all instances</strong>.</li>
+<li>Mở instance <code>aws-network-workshop-web</code>.</li>
+<li>Chờ trạng thái <strong>Running</strong> và các status checks đều đạt.</li>
+<li>Trong <strong>Details</strong>, kiểm tra VPC, subnet, public IPv4 và private IPv4.</li>
+<li>Trong <strong>Security</strong>, kiểm tra Security Group và rule đã lưu.</li>
+<li>Trong <strong>Storage</strong>, ghi lại Root Volume ID và kiểm tra thông tin mã hóa.</li>
+</ol>
+<p>Ghi thông tin thực tế vào bảng:</p>
+<table>
+<thead>
+<tr>
+<th>Thông tin</th>
+<th>Giá trị thực tế</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Region</td>
+<td><code>us-east-1</code></td>
+</tr>
+<tr>
+<td>VPC ID</td>
+<td>Điền từ AWS Console</td>
+</tr>
+<tr>
+<td>Public subnet ID</td>
+<td>Điền từ AWS Console</td>
+</tr>
+<tr>
+<td>Instance ID</td>
+<td>Bổ sung sau khi launch</td>
+</tr>
+<tr>
+<td>Public IPv4 của EC2</td>
+<td>Bổ sung sau khi launch</td>
+</tr>
+<tr>
+<td>Private IPv4 của EC2</td>
+<td>Bổ sung sau khi launch</td>
+</tr>
+<tr>
+<td>Public IP máy thực hành</td>
+<td>Ghi từ Source My IP của rule đã lưu</td>
+</tr>
+<tr>
+<td>Root EBS Volume ID</td>
+<td>Bổ sung từ tab Storage</td>
+</tr>
+</tbody>
+</table>
+<p>Trạng thái Running chưa xác nhận Nginx đã phục vụ HTTP thành công. Kết quả website được kiểm tra trong phần 5.5.</p>
+<p><img src="/images/2/4.png" alt="Hình ảnh"></p>
+<h2 id="10-đối-chiếu-minh-chứng">10. Đối chiếu minh chứng</h2>
+<h3 id="101-các-ảnh-đã-có">10.1. Các ảnh đã có</h3>
+<table>
+<thead>
+<tr>
+<th>Tệp ảnh</th>
+<th>Nội dung</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public-subnet-details.png</code></td>
+<td>Public subnet Available, CIDR 10.10.1.0/24 và AZ us-east-1a</td>
+</tr>
+<tr>
+<td><code>security-group-source.png</code></td>
+<td>Bước cấu hình HTTP 80 trước khi chọn My IP</td>
+</tr>
+<tr>
+<td><code>ec2-storage-before-encryption.png</code></td>
+<td>Cấu hình EC2 và root volume trước khi bật mã hóa</td>
+</tr>
+</tbody>
+</table>
+<h3 id="102-các-ảnh-cần-bổ-sung">10.2. Các ảnh cần bổ sung</h3>
+<table>
+<thead>
+<tr>
+<th>Nội dung ảnh</th>
+<th>Thời điểm chụp</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Public route table</td>
+<td>Sau khi kiểm tra default route tới Internet Gateway</td>
+</tr>
+<tr>
+<td>Private route table</td>
+<td>Sau khi kiểm tra route nội bộ</td>
+</tr>
+<tr>
+<td>Security Group đã lưu</td>
+<td>Sau khi chọn My IP và lưu rule HTTP</td>
+</tr>
+<tr>
+<td>Root volume đã mã hóa</td>
+<td>Sau khi bật Encrypted</td>
+</tr>
+<tr>
+<td>User data</td>
+<td>Trước khi launch EC2</td>
+</tr>
+<tr>
+<td>EC2 Running và thông tin IP</td>
+<td>Sau khi instance khởi tạo và status checks đạt</td>
+</tr>
+</tbody>
+</table>
+<h2 id="11-kiểm-tra-hoàn-thành">11. Kiểm tra hoàn thành</h2>
+<p>Chỉ đánh dấu sau khi kiểm tra được kết quả trên AWS:</p>
+<ul>
+<li><input disabled="" type="checkbox"> VPC và hai subnet có đúng CIDR.</li>
+<li><input disabled="" type="checkbox"> Public route table có default route tới Internet Gateway.</li>
+<li><input disabled="" type="checkbox"> Private subnet sử dụng đúng route table.</li>
+<li><input disabled="" type="checkbox"> Rule HTTP 80 đã lưu với Source là IP máy thực hành <code>/32</code>.</li>
+<li><input disabled="" type="checkbox"> Cổng 8080 vẫn chưa được cho phép.</li>
+<li><input disabled="" type="checkbox"> Root volume đã bật mã hóa và Delete on termination.</li>
+<li><input disabled="" type="checkbox"> User data đã được nhập trước khi launch.</li>
+<li><input disabled="" type="checkbox"> EC2 Running, status checks đạt và có public IPv4.</li>
+<li><input disabled="" type="checkbox"> Đã lưu ID tài nguyên và các địa chỉ IP.</li>
+<li><input disabled="" type="checkbox"> Đã bổ sung ảnh của các cấu hình đã lưu và EC2 thực tế.</li>
+</ul>
+<p>Sau khi hoàn thành, tiếp tục <strong>5.4 — Cấu hình giám sát</strong> trong Region <strong>us-east-1</strong>.</p>
+<p>Giữ tài nguyên cho các phần kiểm thử và thực hiện dọn tài nguyên ở phần 5.9 sau khi lưu đủ minh chứng.</p>
+<h2 id="tài-liệu-tham-khảo">Tài liệu tham khảo</h2>
+<ul>
+<li><a href="https://docs.aws.amazon.com/vpc/latest/userguide/create-vpc.html">AWS — Create a VPC</a></li>
+<li><a href="https://docs.aws.amazon.com/vpc/latest/userguide/WorkWithRouteTables.html">AWS — Manage subnet route tables</a></li>
+<li><a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/creating-security-group.html">AWS — Create a security group</a></li>
+<li><a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-launch-parameters.html">AWS — EC2 instance configuration parameters</a></li>
+<li><a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html">AWS — EC2 User data</a></li>
+</ul>
+
+
+
+
+
+<footer class=" footline" >
+	
+</footer>
+
+        
+        </div> 
+        
+
+      </div>
+
+    <div id="navigation">
+        
+        
+        
+        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+        
+        
+
+
+	 
+	 
+		
+			<a class="nav nav-prev" href="/Workshop-template-master/vi/5.workshop/5.2-prerequisites/" title="5.2. Chuẩn bị"> <i class="fa fa-chevron-left"></i></a>
+		
+		
+			<a class="nav nav-next" href="/Workshop-template-master/vi/5.workshop/5.4-deployment/" title="Cấu hình giám sát" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+	
+    </div>
+
+    </section>
+    
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="/Workshop-template-master/js/clipboard.min.js?1795096901"></script>
+    <script src="/Workshop-template-master/js/perfect-scrollbar.min.js?1795096901"></script>
+    <script src="/Workshop-template-master/js/perfect-scrollbar.jquery.min.js?1795096901"></script>
+    <script src="/Workshop-template-master/js/jquery.sticky.js?1795096901"></script>
+    <script src="/Workshop-template-master/js/featherlight.min.js?1795096901"></script>
+    <script src="/Workshop-template-master/js/highlight.pack.js?1795096901"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="/Workshop-template-master/js/modernizr.custom-3.6.0.js?1795096901"></script>
+    <script src="/Workshop-template-master/js/learn.js?1795096901"></script>
+    <script src="/Workshop-template-master/js/hugo-learn.js?1795096901"></script>
+
+    <link href="/Workshop-template-master/mermaid/mermaid.css?1795096901" rel="stylesheet" />
+    <script src="/Workshop-template-master/mermaid/mermaid.js?1795096901"></script>
+    <script>
+        mermaid.initialize({ startOnLoad: true });
+    </script>
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-158079754-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+  </body>
+</html>
